@@ -21,4 +21,5 @@ Route::get('/aboutus', [PagesController::class, 'aboutus'])->name('aboutus');
 Route::get('/login', [PagesController::class, 'login'])->name('login');
 Route::get('/register', [PagesController::class, 'register'])->name('register');
 Route::get('/cariobat', [PagesController::class, 'cariobat'])->name('cariobat');
-Route::get('/articles', [PagesController::class, 'articles'])->name('articles');
+Route::get('/carirs', [PagesController::class, 'carirs'])->name('carirs');
+Route::get('/detailrs', [PagesController::class, 'detailrs'])->name('detailrs');
