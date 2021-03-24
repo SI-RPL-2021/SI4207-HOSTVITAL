@@ -30,4 +30,8 @@ class PagesController extends Controller
         {
         return view('function.detailrs');
     }
+        public function reservasi()
+        {
+        return view('reservasi');
+    }
 }
