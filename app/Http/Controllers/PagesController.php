@@ -38,4 +38,8 @@ class PagesController extends Controller
         {
         return view('function.bpjs');
         }
+    public function caridiagnosis()
+        {
+        return view('function.caridiagnosis');
+    }
 }
