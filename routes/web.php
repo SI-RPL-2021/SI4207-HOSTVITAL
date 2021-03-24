@@ -24,3 +24,4 @@ Route::get('/cariobat', [PagesController::class, 'cariobat'])->name('cariobat');
 Route::get('/carirs', [PagesController::class, 'carirs'])->name('carirs');
 Route::get('/detailrs', [PagesController::class, 'detailrs'])->name('detailrs');
 Route::get('/reservasi', [PagesController::class, 'reservasi'])->name('reservasi');
+Route::get('/bpjs', [PagesController::class, 'bpjs'])->name('bpjs');

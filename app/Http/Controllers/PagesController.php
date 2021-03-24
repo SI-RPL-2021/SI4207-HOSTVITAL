@@ -34,4 +34,8 @@ class PagesController extends Controller
         {
         return view('reservasi');
     }
+    public function bpjs()
+        {
+        return view('function.bpjs');
+        }
 }
