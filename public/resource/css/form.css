@@ -1,0 +1,35 @@
+/*===== VARIABLES CSS =====*/
+:root {
+    --nav-height: 66px;
+
+    /*===== Colores =====*/
+    --first-color: #cc4848;
+    --second-color: #da6464;
+    --dark-color: #263238;
+    --white-color: #fff;
+}
+* 
+.search-100 {
+    padding-inline-start: 20px;
+    width: 100%;
+    height: 46px;
+    border: 0;
+    border-radius: 10px 0 0 10px;
+    color: var(--white-color);
+    background-color: var(--first-color);
+}
+.search-100::placeholder{
+    font-size: 16px;
+    color: whitesmoke;
+}
+.search-100:focus{
+    border-radius: 10px;
+}
+.search-100-btn{
+    width: 46px;
+    height: 46px;
+    border: 0;
+    border-radius: 0 10px 10px 0;
+    color: var(--white-color);
+    background-color: var(--first-color);
+}

@@ -1,0 +1,129 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root {
+    --nav-height: 66px;
+
+    /*===== Colores =====*/
+    --first-color: #cc4848;
+    --second-color: #da6464;
+    --dark-color: #263238;
+    --white-color: #fff;
+}
+*
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--white-color);
+    font-family: "Rubik", sans-serif;
+    transition: .5s;
+}
+h3{
+    color: var(--dark-color);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* NAVBAR */
+.navbar {
+    height: var(--nav-height);
+    color: var(--dark-color);
+    background-color: var(--white-color);
+    font-weight: 700;
+}
+.nav-link {
+    margin-left: 1rem;
+    color: var(--dark-color);
+}
+.nav-link:hover{
+    color: var(--second-color);
+}
+.login-link{
+    color: #BDBDBD;
+}
+.active{
+    color: var(--first-color);
+}
+
+/* FOOTER */
+footer{
+    padding: 2rem;
+    color: var(--white-color);
+    background-color: var(--first-color);
+}
+.f-link{
+    text-decoration: none;
+    font-weight: 300;
+    color: var(--white-color);
+}
+.f-link:hover{
+    color: var(--second-color);
+}
+.address{
+    margin: 0;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+/* CONTENT */
+/* content left */
+.siagacovid{
+    color: var(--first-color);
+}
+.button-covid{
+    margin-top: 1rem;
+    max-width: 100%;
+}
+.button-covid:hover{
+    transition: .5s;
+    transform: scale(1.02);
+}
+
+.layanan{
+    max-width: 200px;
+}
+.btn-layanan{
+    display: block;
+    width: 100%;
+}
+.btn-layanan:hover{
+    transition: .5s;
+    transform: scale(1.05);
+}
+.btn-layanan .img{
+    text-align: center;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    max-width: 100%;
+}
+.btn-layanan .desc{
+    margin: 0;
+    padding: .5rem 0 .5rem 0;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--white-color);
+    background-color: var(--first-color);
+}
+
+/* content right */
+.b-link{
+    font-weight: 300;
+    color: var(--dark-color);
+}
+.b-link:hover{
+    color: var(--second-color);
+}
+.berita{
+    padding: 2rem;
+}
+.judul{
+    max-height: 60px;
+    overflow: hidden;
+}
+.pop:hover{
+    transition: .5s;
+    transform: scale(1.05);
+}
