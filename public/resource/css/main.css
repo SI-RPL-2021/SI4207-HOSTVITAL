@@ -123,7 +123,19 @@ footer{
     max-height: 60px;
     overflow: hidden;
 }
+.judul-xl{
+    max-height: 97px;
+    overflow: hidden;
+}
 .pop:hover{
     transition: .5s;
     transform: scale(1.05);
+}
+
+.tags{
+    margin-bottom: 1rem;
+    padding: .5rem 1rem .5rem 1rem;
+    border-radius: 5px;
+    background-color: #DEDEDE;
+    fill-opacity: 70%;
 }
