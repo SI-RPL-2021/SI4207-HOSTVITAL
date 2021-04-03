@@ -42,16 +42,13 @@ class PagesController extends Controller
         {
         return view('function.caridiagnosis');
     }
-<<<<<<< HEAD
     public function caridokter()
         {
         return view('function.caridokter');
-=======
+        }
     public function detaildiagnosis()
         {
         return view('function.detaildiagnosis');
     }
     
->>>>>>> b5d26cf56e2c6a0a5c609b46e5bb0a689629f50d
-}
 }
