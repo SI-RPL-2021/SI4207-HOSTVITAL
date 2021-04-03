@@ -25,8 +25,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <div class="navbar-nav ms-auto">
-          <a class="nav-link active" aria-current="page" href="{{ '/' }}">Beranda</a>
-          <a class="nav-link" href="{{ '/aboutus' }}">Tentang Kami</a>
+          <a class="nav-link " aria-current="page" href="{{ '/' }}">Beranda</a>
+          <a class="nav-link active" href="{{ '/aboutus' }}">Tentang Kami</a>
           <a class="nav-link" href="#skills">Artikel</a>
           <a class="nav-link" href="#portfolio">Layanan</a>
           <a class="nav-link login-link" href="#contact">Login/Register</a>

@@ -42,4 +42,8 @@ class PagesController extends Controller
         {
         return view('function.caridiagnosis');
     }
+    public function caridokter()
+        {
+        return view('function.caridokter');
+}
 }

@@ -17,7 +17,7 @@
         <h3 style="margin-top: 2rem">Layanan</h3>
         <div class="row">
           <div class="col-md layanan">
-            <a class="btn-layanan" href="#" style="text-decoration: none;">
+            <a class="btn-layanan" href="{{ '/caridokter' }}" style="text-decoration: none;">
               <div class="shadow mb-5 bg-body" style="border-radius: 10px">
                 <img class="img" src="{{ 'resource/imgres/a-dokter.png' }}" alt="">
                 <p class="desc">Cari Dokter</p>

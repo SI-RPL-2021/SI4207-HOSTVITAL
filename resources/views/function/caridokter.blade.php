@@ -3,8 +3,7 @@
 @section('title', 'Hosvital: Cari Dokter')
 
 @section('content')
-  <img src="{{ 'resource/imgres/back-caridokter.jpg' }}" alt="cari dokter" width="100%">
-
+  <img src="{{ 'resource/imgres/back-caridokter.png'}}" alt="cari dokter" width="100%">
   <div class="container" style="margin-top: 3rem">
     <div class="row">
       {{-- left content --}}
