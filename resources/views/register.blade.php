@@ -53,30 +53,31 @@
                   </center>
                   </div>
                   <div class="col  shadow-custom" style="background-color: white;">
-                  <form class="" style="padding-left: 100px; padding-right: 100px; margin-top: 12%;">
+                  <form method="POST" action="register" class="" style="padding-left: 100px; padding-right: 100px; margin-top: 12%;">
+                  @csrf
                       <div class="mb-3">
                         <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Firstname:</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input style="border: 2px solid #CC4848; border-radius:10px" name="firstname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                       </div>
                       <div class="mb-3">
                         <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Lastname:</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input style="border: 2px solid #CC4848; border-radius:10px" name="lastname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                       </div>
                       <div class="mb-3">
                         <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Username:</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input style="border: 2px solid #CC4848; border-radius:10px" name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                       </div>
                       <div class="mb-3">
                         <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Email:</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input style="border: 2px solid #CC4848; border-radius:10px" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                       </div>
                       <div class="mb-3">
                         <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Password:</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input style="border: 2px solid #CC4848; border-radius:10px" name="password" type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                       </div>
                       <div class="mb-3">
                         <label style="font-weight: bold;" for="exampleInputPassword1" class="form-label">Confirm Password</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" type="password" class="form-control" id="exampleInputPassword1">
+                        <input style="border: 2px solid #CC4848; border-radius:10px" name="confirmpassword" type="password" class="form-control" id="exampleInputPassword1">
                         <br>
                         <div class="form-check form-check-inline">
                             <input style="border: 2px solid #CC4848;" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
@@ -84,7 +85,7 @@
                         </div>
                       </div>
                       <div class="d-grid gap-2">
-                          <button class="btn" style="background-color: #CC4848; color:white; border-radius:10px" type="button">Register</button>
+                          <button class="btn" style="background-color: #CC4848; color:white; border-radius:10px" type="submit">Register</button>
                       </div>
                       <br>
                       <center>
