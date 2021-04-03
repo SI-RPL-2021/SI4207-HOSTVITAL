@@ -54,23 +54,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm">
-                    <div class="shadow card mb-3 pop" style="border: 0; border-radius: 10px;">
-                        <div class="row g-0">
-                            <div class="col-md-3" style="overflow: hidden;">
-                                <img src="{{ 'resource/imgres/premier2.png' }}" style="height: 160px;">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title judul">Suite A</h6>
-                                        <h6 class="card-title judul" style="color: #263238;">Tersedia 15
-                                    </h5>
-                                    <h6 class="card-title judul" style="color: #27AE60;">IDR 2.000.000</h6>
-                                    <div class="d-grid gap-2">
-                                        <a class="btn" href="#" style="background-color: #CC4848; color:white; border-radius:10px">Cek Kamar</a>
-                                    </div>
-                                </div>
-                            </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <br><br>
+            <div class="shadow card mb-3 pop" style="border: 0; border-radius: 10px;">
+                <div class="row g-0">
+                    <div class="col-md-3" style="overflow: hidden;">
+                        <img src="{{ 'resource/imgres/premier2.png' }}" style="height: 150px;">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title judul">Suite A</h6>
+                                <h6 class="card-title judul" style="color: #263238;">Tersedia 15
+                            </h5>
+                            <h6 class="card-title judul" style="color: #27AE60;">IDR 1.000.000</h6>
+                            <a class="b-link" href="{{ '/cekdetailkamar' }}" style="font-size: 14px">Cek Kamar</a>
                         </div>
                     </div>
                 </div>
