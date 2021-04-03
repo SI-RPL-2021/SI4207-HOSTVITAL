@@ -21,7 +21,7 @@
           </div>
         </form><br>
 
-        <h3>Hasil Pencarian "Rematik"</h3><br>
+        <h3>Hasil Pencarian "Rematik" </h3><br>
         
       </div>
 
