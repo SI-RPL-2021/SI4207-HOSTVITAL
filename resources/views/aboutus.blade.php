@@ -34,6 +34,7 @@
           <a class="nav-link login-link" href="{{ '/logout' }}">Logout</a>
           @else
           <a class="nav-link login-link" href="{{ '/login' }}">Login/Register</a>
+          @endif
         </div>
       </div>
     </div>
