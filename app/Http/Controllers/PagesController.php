@@ -42,4 +42,9 @@ class PagesController extends Controller
         {
         return view('function.caridiagnosis');
     }
+    public function detaildiagnosis()
+        {
+        return view('function.detaildiagnosis');
+    }
+    
 }
