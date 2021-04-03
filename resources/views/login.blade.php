@@ -53,14 +53,15 @@
                   </center>
                   </div>
                   <div class="col  shadow-custom" style="background-color: white;">
-                  <form method="post"class="" style="padding-left: 100px; padding-right: 100px; margin-top: 12%;">
+                  <form method="post" action="login" class="" style="padding-left: 100px; padding-right: 100px; margin-top: 12%;">
+                    @csrf
                       <div class="mb-3">
                         <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input style="border: 2px solid #CC4848; border-radius:10px" type="email" name="emailaddress" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                       </div>
                       <div class="mb-3">
                         <label style="font-weight: bold;" for="exampleInputPassword1" class="form-label">Password</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" type="password" class="form-control" id="exampleInputPassword1">
+                        <input style="border: 2px solid #CC4848; border-radius:10px" type="password" name="password" class="form-control" id="exampleInputPassword1">
                         <br>
                         <div id="emailHelp" class="form-text" style="float:right; color: #BDBDBD;">Lupa Password?</div>
                         <br>
