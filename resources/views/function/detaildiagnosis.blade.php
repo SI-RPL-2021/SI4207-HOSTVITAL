@@ -9,7 +9,7 @@
     <div class="row">
     <h3>Rematik</h3>
     <p class="text-muted">Ditinjau oleh: Hostvital</p>
-        <p class="card-text">ReRematik atau penyakit yang ditandai dengan nyeri sendi disebut juga rheumatoid arthritis. Penyakit ini merupakan penyakit autoimun ketika sistem imun pada tubuh seseorang menyerang sel-sel tubuhnya sendiri.</p>
+        <p class="card-text">Rematik atau penyakit yang ditandai dengan nyeri sendi disebut juga rheumatoid arthritis. Penyakit ini merupakan penyakit autoimun ketika sistem imun pada tubuh seseorang menyerang sel-sel tubuhnya sendiri.</p>
         <p class="card-text">Dalam hal ini, area persendian adalah area yang diserang oleh sistem imun pengidap rheumatoid arthritis. Akibatnya, peradangan kronik dan rasa nyeri yang hebat pada sendi-sendi yang terserang terjadi.</p>
     <h5>Faktor Risiko Rematik</h5>
         <p class="card-text">Sampai saat ini penyebab utama seseorang bisa mengidap penyakit rematik belum ditemukan, tetapi faktor genetik dipercaya memiliki peran dalam timbulnya penyakit ini. Faktor risiko yang meningkatkan seseorang mengalami penyakit ini, antara lain:</p>

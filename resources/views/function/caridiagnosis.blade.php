@@ -22,19 +22,7 @@
         </form><br>
 
         <h3>Hasil Pencarian "Rematik"</h3><br>
-        <div class="shadow card mb-3" style="width: 81rem;" style="border-radius: 20px">
-        <div class="card-body">
-            <h5 class="card-title">Rematik</h5>
-            <p class="card-text">Rematik atau penyakit yang ditandai dengan nyeri sendi disebut juga rheumatoid arthritis. Penyakit ini merupakan penyakit autoimun ketika sistem imun pada tubuh seseorang menyerang sel-sel tubuhnya sendiri.</p>
-            <p class="card-text">Dalam hal ini, area persendian adalah area yang diserang oleh sistem imun pengidap rheumatoid arthritis. Akibatnya, peradangan kronik dan rasa nyeri yang hebat pada sendi-sendi yang terserang terjadi.</p>
-            <p class="card-text">saat ini penyebab utama seseorang bisa mengidap penyakit rematik belum ditemukan, tetapi faktor genetik dipercaya memiliki peran dalam timbulnya penyakit ini. Faktor risiko yang meningkatkan seseorang mengalami penyakit ini, antara lain:</p>
-            <div id="button">
-              <span style="float: right">
-              <a href="{{ '/detaildiagnosis' }}" class="card-link text-secondary text-right mx-auto">Lihat lebih banyak</a>
-              </span>
-            </div>
-        </div>
-        </div>
+        
       </div>
 
       {{-- right content --}}
@@ -51,5 +39,20 @@
         </div>
       </div>
     </div>
-  </div> <br>
+  </div> 
+  <div class="container">
+  <div class="shadow card mb-3" style="max-width: 81rem; border-radius: 10px">
+        <div class="card-body">
+            <h5 class="card-title">Rematik</h5>
+            <p class="card-text">Rematik atau penyakit yang ditandai dengan nyeri sendi disebut juga rheumatoid arthritis. Penyakit ini merupakan penyakit autoimun ketika sistem imun pada tubuh seseorang menyerang sel-sel tubuhnya sendiri.</p>
+            <p class="card-text">Dalam hal ini, area persendian adalah area yang diserang oleh sistem imun pengidap rheumatoid arthritis. Akibatnya, peradangan kronik dan rasa nyeri yang hebat pada sendi-sendi yang terserang terjadi.</p>
+            <p class="card-text">saat ini penyebab utama seseorang bisa mengidap penyakit rematik belum ditemukan, tetapi faktor genetik dipercaya memiliki peran dalam timbulnya penyakit ini. Faktor risiko yang meningkatkan seseorang mengalami penyakit ini, antara lain:</p>
+            <div id="button">
+              <span style="float: right">
+              <a href="{{ '/detaildiagnosis' }}" class="card-link text-secondary text-right mx-auto">Lihat lebih banyak</a>
+              </span>
+            </div>
+        </div>
+        </div>
+  </div><br>
 @endsection
