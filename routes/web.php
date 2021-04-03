@@ -23,6 +23,7 @@ Route::get('/register', [PagesController::class, 'register'])->name('register');
 Route::get('/cariobat', [PagesController::class, 'cariobat'])->name('cariobat');
 Route::get('/carirs', [PagesController::class, 'carirs'])->name('carirs');
 Route::get('/detailrs', [PagesController::class, 'detailrs'])->name('detailrs');
+Route::get('/cekdetailkamar', [PagesController::class, 'cekdetailkamar'])->name('cekdetailkamar');
 Route::get('/reservasi', [PagesController::class, 'reservasi'])->name('reservasi');
 Route::get('/bpjs', [PagesController::class, 'bpjs'])->name('bpjs');
 Route::get('/caridiagnosis', [PagesController::class, 'caridiagnosis'])->name('caridiagnosis');

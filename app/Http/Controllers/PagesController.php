@@ -30,6 +30,10 @@ class PagesController extends Controller
         {
         return view('function.detailrs');
     }
+    public function cekdetailkamar()
+        {
+        return view('function.cekdetailkamar');
+    }
         public function reservasi()
         {
         return view('reservasi');
