@@ -50,8 +50,8 @@
             <div class="col">
             <div class="shadow card mb-3" style="max-width: 650px; border-radius: 10px">
             <div class="row g-0">
-                <div class="col-md-4"><br>
-                  <img src="{{ 'resource/imgres/obat-1.png' }}"style="height: 150px;">
+                <div class="col-md-4" align="center"><br>
+                  <img src="{{ 'resource/imgres/obat-1.jpg' }}"style="height: 150px;">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
@@ -61,7 +61,7 @@
                       <br><br><p class="card-text">IDR 30.000 </p>
                   </div>
                   <div class="d-grid gap-2">
-                      <a class="btn" href="{{ '/detailrs' }}" style="background-color: #CC4848; color:white; border-radius:10px">Beli Obat</a>
+                      <a class="btn" href="{{ '/cekdetailobat' }}" style="background-color: #CC4848; color:white; border-radius:10px">Detail Obat</a>
                   </div>
                   <br>
                 </div>
@@ -71,7 +71,7 @@
             <div class="col">
             <div class="shadow card mb-3" style="max-width: 650px; border-radius: 10px">
             <div class="row g-0">
-                <div class="col-md-4"><br>
+                <div class="col-md-4" align="center"><br>
                   <img src="{{ 'resource/imgres/obat-2.png' }}"style="height: 150px;">
                 </div>
                 <div class="col-md-8">
@@ -82,7 +82,7 @@
                       <br><br><p class="card-text">IDR 15.000 </p>
                   </div>
                   <div class="d-grid gap-2">
-                      <a class="btn" href="{{ '/detailrs' }}" style="background-color: #CC4848; color:white; border-radius:10px">Beli Obat</a>
+                      <a class="btn" href="{{ '/cekdetailobat' }}" style="background-color: #CC4848; color:white; border-radius:10px">Detail Obat</a>
                   </div>
                   <br>
                 </div>

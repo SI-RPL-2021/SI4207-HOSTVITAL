@@ -39,3 +39,6 @@ Route::get('/logout', function(Request $req) {
     $req->session()->forget('login');
     return redirect('/login');
 });
+Route::get('/cekdetailobat', [PagesController::class, 'cekdetailobat'])->name('cekdetailobat');
+Route::get('/formpemesananobat', [PagesController::class, 'formpemesananobat'])->name('formpemesananobat');
+Route::get('/uploadbukti', [PagesController::class, 'uploadbukti'])->name('uploadbukti');

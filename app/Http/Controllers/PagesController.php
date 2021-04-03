@@ -58,5 +58,16 @@ class PagesController extends Controller
         {
         return view('function.profiledokter');
     }
-    
+    public function cekdetailobat()
+        {
+        return view('function.cekdetailobat');
+    }
+    public function formpemesananobat()
+        {
+        return view('function.formpemesananobat');
+    }
+    public function uploadbukti()
+        {
+        return view('function.uploadbukti');
+    }
 }

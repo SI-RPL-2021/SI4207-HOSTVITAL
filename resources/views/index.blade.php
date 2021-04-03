@@ -105,4 +105,16 @@
       </div>
     </div>
   </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md layanan">
+              <a class="btn-layanan" href="{{ '/cariobat' }}" style="text-decoration: none;">
+                <div class="shadow mb-5 bg-body" style="border-radius: 10px">
+                  <img class="img" src="{{ 'resource/imgres/a-obat.png' }}" alt="">
+                  <p class="desc">Cari Obat</p>
+                </div>
+              </a>
+        </div>
+    </div>
+  </div>
 @endsection
