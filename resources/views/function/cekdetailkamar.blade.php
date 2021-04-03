@@ -38,7 +38,7 @@
             <div class="shadow card" style="margin: 3rem 1rem 3rem 1rem; border-radius: 20px">
                 <div class="row">
                     <div class="col-7">
-                        <img src="{{ 'resource/imgres/cekkamar.png' }}" alt="logo-hostvital" width="703">
+                        <img src="{{ 'resource/imgres/cekkamar.png' }}" alt="logo-hostvital" width="703; overflow: hidden;">
                     </div>
                     <div class="col-4">
                         <br><br>
