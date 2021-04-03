@@ -60,7 +60,7 @@
                             <h5 class="card-title judul">Suite A</h6>
                                 <h6 class="card-title judul" style="color: #263238;">Tersedia 15
                             </h5>
-                            <h6 class="card-title judul" style="color: #27AE60;">IDR 2.000.000</h6>
+                            <h6 class="card-title judul" style="color: #27AE60;">IDR 1.000.000</h6>
                             <a class="b-link" href="{{ '/cekdetailkamar' }}" style="font-size: 14px">Cek Kamar</a>
                         </div>
                     </div>
