@@ -85,7 +85,7 @@
                                     <h5 class="card-title judul">Suite B</h6>
                                         <h6 class="card-title judul" style="color: #263238;">Tersedia 10
                                     </h5>
-                                    <h6 class="card-title judul" style="color: #27AE60;">IDR 1.000.000</h6>
+                                    <h6 class="card-title judul" style="color: #27AE60;">IDR 900.000</h6>
                                     <div class="d-grid gap-2">
                                         <a class="btn" href="#" style="background-color: #CC4848; color:white; border-radius:10px">Cek Kamar</a>
                                     </div>
