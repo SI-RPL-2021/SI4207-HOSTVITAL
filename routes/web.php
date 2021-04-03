@@ -33,12 +33,9 @@ Route::get('/caridiagnosis', [PagesController::class, 'caridiagnosis'])->name('c
 Route::get('/caridokter', [PagesController::class, 'caridokter'])->name('caridokter');
 Route::get('/detaildiagnosis', [PagesController::class, 'detaildiagnosis'])->name('detaildiagnosis');
 Route::get('/profiledokter', [PagesController::class, 'profiledokter'])->name('profiledokter');
-<<<<<<< HEAD
-=======
 Route::post('/register', [register::class, 'register']);
 Route::post('/login', [login::class, 'login']);
 Route::get('/logout', function(Request $req) {
     $req->session()->forget('login');
     return redirect('/login');
 });
->>>>>>> firdy
