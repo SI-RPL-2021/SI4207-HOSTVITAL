@@ -28,3 +28,4 @@ Route::get('/bpjs', [PagesController::class, 'bpjs'])->name('bpjs');
 Route::get('/caridiagnosis', [PagesController::class, 'caridiagnosis'])->name('caridiagnosis');
 Route::get('/caridokter', [PagesController::class, 'caridokter'])->name('caridokter');
 Route::get('/detaildiagnosis', [PagesController::class, 'detaildiagnosis'])->name('detaildiagnosis');
+Route::get('/profiledokter', [PagesController::class, 'profiledokter'])->name('profiledokter');

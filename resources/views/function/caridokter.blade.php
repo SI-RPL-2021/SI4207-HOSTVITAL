@@ -3,7 +3,8 @@
 @section('title', 'Hosvital: Cari Dokter')
 
 @section('content')
-  <img src="{{ 'resource/imgres/back-caridokter.png'}}" alt="cari dokter" width="100%">
+  <img src="{{ 'resource/imgres/back-caridokter.png' }}" alt="cari dokter" width="100%">
+
   <div class="container" style="margin-top: 3rem">
     <div class="row">
       {{-- left content --}}
@@ -20,46 +21,71 @@
           </div>
         </form><br>
 
-        <h3>Hasil Pencarian "Cantik"</h3>
+        <h3>Hasil Pencarian "Cantik"</h3><br>
 
-        <div class="row row-cols-1 row-cols-md-3 g-6">
- 
-  <div class="col">
-    <div class="card">
-
-      <div class="card-body">
-        <h5 class="card-title">dr. Cici Cantik, SpBP</h5>
-        <p class="card-text">Spesialis Bedah Plastik.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-
-      <div class="card-body">
-        <h5 class="card-title">dr. Stephen Marbun, SpBS</h5>
-        <p class="card-text">Spesialis Bedah Plastik.</p>
-      </div>
-    </div>
-  </div>
-
-</div>
-        
-        <br><br>
-
-      {{-- right content --}}
-      <div class="col-5">
-        <div class="shadow card mb-3" style="max-width: 540px; border-radius: 10px">
+        <div class="shadow card mb-3 pop" style="border: 0; border-radius: 10px">
           <div class="row g-0">
-            <div class="col-md-7">
-              <p style="padding: 3rem 1rem 3rem 2rem; margin: 0; ">Cari dokter yang tepat untuk anda sekarang!</p>
-            </div>
-            <a class="col-md-5 pop" style="background-color: #cc4848; border-radius: 0 10px 10px 0" href="#">
-              <p style="padding: 3.5rem 1rem 3rem 2rem; margin: 0; font-weight: 700; color: white">Cek Dokter</p>
-            </a>
+              <div class="col-md-2" style="overflow: hidden;">
+                  <img src="{{ 'resource/imgres/doktercici.png' }}" style="height: 150px;">
+              </div>
+              <div class="col-md-10">
+                  <div class="card-body">
+                      <h6 class="card-title judul">dr. Cici Cantik, SpBP</h6>
+                      <h6 class="card-title judul" style="color: #828282;">Rumah Sakit Premier Bintaro</h6>
+                      <h6 class="card-title judul">Spesialis Bedah Plastik</h6>
+                      <div class="d-grid gap-2">
+                          <a class="btn" href="{{ '/profiledokter' }}" style="background-color: #CC4848; color:white; border-radius:10px">Lihat Profile Dokter</a>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
       </div>
-    </div>
   </div>
+
+{{-- right content --}}
+<div class="col-5">
+  <div class="row">
+      <div class="col">
+          <h3>Rekomendasi</h3>
+          <br>
+          <div class="shadow card mb-3 pop" style="border: 0; border-radius: 10px">
+              <div class="row g-0">
+                  <div class="col-md-3" style="overflow: hidden;">
+                      <img src="{{ 'resource/imgres/doktercici.png' }}" style="height: 150px;">
+                  </div>
+                  <div class="col-md-9">
+                      <div class="card-body">
+                        <h6 class="card-title judul">dr. Cici Cantik, SpBP</h6>
+                        <h6 class="card-title judul" style="color: #828282;">Rumah Sakit Premier Bintaro</h6>
+                        <h6 class="card-title judul">Spesialis Bedah Plastik</h6>
+                          <div class="d-grid gap-2">
+                              <a class="btn" href="{{ '/profiledokter' }}" style="background-color: #CC4848; color:white; border-radius:10px">Lihat Profile Dokter</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="shadow card mb-3 pop" style="border: 0; border-radius: 10px">
+              <div class="row g-0">
+                  <div class="col-md-3" style="overflow: hidden;">
+                      <img src="{{ 'resource/imgres/dokterstephen.png' }}" style="height: 165px;">
+                  </div>
+                  <div class="col-md-9">
+                      <div class="card-body">
+                        <h6 class="card-title judul">dr. Stephen Marbun, SpBS</h6>
+                        <h6 class="card-title judul" style="color: #828282;">Rumah Sakit Siloam Simatupang</h6>
+                        <h6 class="card-title judul">Spesialis Bedah Saraf</h6>
+                        <div class="d-grid gap-2">
+                              <a class="btn" href="{{ '/profiledokter' }}" style="background-color: #CC4848; color:white; border-radius:10px">Lihat Profile Dokter</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
 @endsection

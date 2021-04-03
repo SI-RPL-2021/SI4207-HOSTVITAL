@@ -50,5 +50,9 @@ class PagesController extends Controller
         {
         return view('function.detaildiagnosis');
     }
+    public function profiledokter()
+        {
+        return view('function.profiledokter');
+    }
     
 }
