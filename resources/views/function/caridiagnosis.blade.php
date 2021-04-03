@@ -9,7 +9,7 @@
     <div class="row">
       {{-- left content --}}
       <div class="col-7">
-        <h3 style="margin-bottom: 1rem">Cari Diagnosis</h3>
+        <h3 style="margin-bottom: 1rem">Cari Diagnosis </h3>
         <form action="#">
           <div class="row" style="width: 100%">
             <div class="col-md-11" style="padding: 0 0 0 1rem">
