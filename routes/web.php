@@ -33,6 +33,8 @@ Route::get('/reservasi', [PagesController::class, 'reservasi'])->name('reservasi
 Route::get('/bpjs', [PagesController::class, 'bpjs'])->name('bpjs');
 Route::get('/caridiagnosis', [PagesController::class, 'caridiagnosis'])->name('caridiagnosis');
 Route::get('/caridokter', [PagesController::class, 'caridokter'])->name('caridokter');
+Route::get('/detaildiagnosis', [PagesController::class, 'detaildiagnosis'])->name('detaildiagnosisold');
+Route::get('/detaildiagnosis/{id}', [PagesController::class, 'detaildiagnosis'])->name('detaildiagnosis');
 Route::get('/profiledokter', [PagesController::class, 'profiledokter'])->name('profiledokterold');
 Route::get('/profiledokter/{id}', [PagesController::class, 'profiledokter'])->name('profiledokter');
 Route::post('/register', [register::class, 'register']);
@@ -41,6 +43,7 @@ Route::get('/logout', function(Request $req) {
     $req->session()->forget('login');
     return redirect('/login');
 });
-
+Route::get('/cekdetailobat', [PagesController::class, 'cekdetailobat'])->name('cekdetailobatold');
+Route::get('/cekdetailobat/{id}', [PagesController::class, 'cekdetailobat'])->name('cekdetailobat');
 Route::get('/formpemesananobat', [PagesController::class, 'formpemesananobat'])->name('formpemesananobat');
 Route::get('/uploadbukti', [PagesController::class, 'uploadbukti'])->name('uploadbukti');

@@ -18,9 +18,15 @@ class PagesController extends Controller
         {
         return view('register');
     }
-    public function cariobat()
+    public function cariobat(Request $r)
+    {
+        $dataSearch = null;
+        if ($r->get("nama_obat"))
         {
-        return view('function.cariobat');
+            $keyword = $r->get("nama_obat");
+            $dataSearch = DB::select("SELECT * FROM obat WHERE nama LIKE '%$keyword%'");
+        }
+        return view('function.cariobat',["dataSearch"=>$dataSearch,"keyword"=>$keyword ?? null]);
     }
     public function carirs(Request $r)
     {
@@ -51,9 +57,16 @@ class PagesController extends Controller
         {
         return view('function.bpjs');
         }
-    public function caridiagnosis()
+    public function caridiagnosis(Request $r)
+    {
+        
+        $dataSearch = null;
+        if ($r->get("nama_diagnosis"))
         {
-        return view('function.caridiagnosis');
+            $keyword = $r->get("nama_diagnosis");
+            $dataSearch = DB::select("SELECT * FROM diagnosis WHERE nama LIKE '%$keyword%'");
+        }
+        return view('function.caridiagnosis',["dataSearch" => $dataSearch,"keyword"=>$keyword ?? null]);
     }
     public function caridokter(Request $r)
     {
@@ -65,18 +78,20 @@ class PagesController extends Controller
         }
         return view('function.caridokter',["dataSearch"=>$dataSearch,"keyword"=>$keyword ?? null]);
     }
-    public function detaildiagnosis()
-        {
-        return view('function.detaildiagnosis');
+    public function detaildiagnosis($id)
+    {
+        $data = DB::select("SELECT * FROM diagnosis WHERE id = ?",[$id]);
+        return view('function.detaildiagnosis',["data"=>$data[0]]);
     }
     public function profiledokter($id)
     {
         $data = DB::select("SELECT * FROM dokter WHERE id = ?",[$id]);
         return view('function.profiledokter',["data"=>$data[0]]);
     }
-    public function cekdetailobat()
-        {
-        return view('function.cekdetailobat');
+    public function cekdetailobat($id)
+    {
+        $data = DB::select("SELECT * FROM obat WHERE id = ?",[$id]);
+        return view('function.cekdetailobat',["data"=>$data[0]]);
     }
     public function formpemesananobat()
         {

@@ -9,14 +9,14 @@
 
     {{-- css --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link href="{{ 'resource/css/main.css' }}" rel="stylesheet">
+    <link href="{{ url('resource/css/main.css') }}" rel="stylesheet">
 </head>
 
 <body background="{{ 'resource/imgres/back-about.png' }}" style="background-size:100%; background-repeat: no-repeat; min-height: 100vh">
     {{-- navbar --}}
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <img src="{{ 'resource/imgres/logo-kemenkes.png' }}" alt="hostvital-logo">
+            <img src="{{ url('resource/imgres/logo-kemenkes.png') }}" alt="hostvital-logo">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -38,19 +38,12 @@
             <div class="shadow card" style="margin: 3rem 1rem 3rem 1rem; border-radius: 20px">
                 <div class="row">
                     <div class="col-7" align="center">
-                        <img src="{{ 'resource/imgres/obat-1.jpg' }}" alt="logo-hostvital" width="600">
+                        <img src="{{ url('resource/imgres/'.$data->foto) }}" alt="logo-hostvital" style="height: 505px;">
                     </div>
-                    <div class="col-4">
-                        <br><br>
-                        <h3 class="artikel">Panadol Advance 100 mge</h3>
+                    <div class="col-4" style="margin-top: 50px;">
+                        <h3 class="artikel">{{$data->nama}}</h3>
+                        <pre style="text-align:justify;white-space:pre-wrap;font-family:var(--bs-font-sans-serif);">{{$data->deskripsi}}</pre>
                         <br>
-                        <p style="text-align:justify;">Panadol Advance digunakan untuk meredakan nyeri ringan hingga sedang dengan cepat dan efektif, termasuk:</p>
-                            <p class="card-text">-Sakit kepala</p>
-                            <p class="card-text">-Nyeri dan nyeri otot</p>
-                            <p class="card-text">-Nyeri haid</p>
-                            <p class="card-text">-Sakit gigi</p>
-                            <p class="card-text">-Osteoartritis</p>
-                            <p class="card-text">-Demam</p>
                         <h5 class="artikel">Kuantitas</h5>
                         <div class="input-group" align="center">
                             <span class="input-group-btn">
@@ -63,7 +56,7 @@
                         </div>
                         <br>
                         <div class="d-grid gap-2" align="center">
-                            <a class="btn" href="{{ '/formpemesananobat' }}" style="background-color: #CC4848; color:white; border-radius:10px">Beli Obat</a>
+                            <a class="btn" href="{{ url('/formpemesananobat') }}" style="background-color: #CC4848; color:white; border-radius:10px">Beli Obat</a>
                         </div>
                     </div>
                 </div>
@@ -75,7 +68,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="{{ 'resource/imgres/logo.png' }}" alt="logo-hostvital" style="margin-top: 20px">
+                    <img src="{{ url('resource/imgres/logo.png') }}" alt="logo-hostvital" style="margin-top: 20px">
                 </div>
                 <div class="col-md-3">
                     <p style="margin-bottom: 0; font-weight: 600">Site Map</p>
