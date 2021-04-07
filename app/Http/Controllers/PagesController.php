@@ -46,17 +46,24 @@ class PagesController extends Controller
         {
         return view('function.caridiagnosis');
     }
-    public function caridokter()
+    public function caridokter(Request $r)
+    {
+        $dataSearch = null;
+        if ($r->get("nama_dokter"))
         {
-        return view('function.caridokter');
+            $keyword = $r->get("nama_dokter");
+            $dataSearch = DB::select("SELECT * FROM dokter WHERE nama LIKE '%$keyword%'");
         }
+        return view('function.caridokter',["dataSearch"=>$dataSearch,"keyword"=>$keyword ?? null]);
+    }
     public function detaildiagnosis()
         {
         return view('function.detaildiagnosis');
     }
-    public function profiledokter()
-        {
-        return view('function.profiledokter');
+    public function profiledokter($id)
+    {
+        $data = DB::select("SELECT * FROM dokter WHERE id = ?",[$id]);
+        return view('function.profiledokter',["data"=>$data[0]]);
     }
     public function cekdetailobat()
         {

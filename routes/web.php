@@ -25,20 +25,18 @@ Route::get('/login', [PagesController::class, 'login'])->name('login');
 Route::get('/register', [PagesController::class, 'register'])->name('register');
 Route::get('/cariobat', [PagesController::class, 'cariobat'])->name('cariobat');
 Route::get('/carirs', [PagesController::class, 'carirs'])->name('carirs');
-Route::get('/detailrs', [PagesController::class, 'detailrs'])->name('detailrs');
-Route::get('/cekdetailkamar', [PagesController::class, 'cekdetailkamar'])->name('cekdetailkamar');
 Route::get('/reservasi', [PagesController::class, 'reservasi'])->name('reservasi');
 Route::get('/bpjs', [PagesController::class, 'bpjs'])->name('bpjs');
 Route::get('/caridiagnosis', [PagesController::class, 'caridiagnosis'])->name('caridiagnosis');
 Route::get('/caridokter', [PagesController::class, 'caridokter'])->name('caridokter');
-Route::get('/detaildiagnosis', [PagesController::class, 'detaildiagnosis'])->name('detaildiagnosis');
-Route::get('/profiledokter', [PagesController::class, 'profiledokter'])->name('profiledokter');
+Route::get('/profiledokter', [PagesController::class, 'profiledokter'])->name('profiledokterold');
+Route::get('/profiledokter/{id}', [PagesController::class, 'profiledokter'])->name('profiledokter');
 Route::post('/register', [register::class, 'register']);
 Route::post('/login', [login::class, 'login']);
 Route::get('/logout', function(Request $req) {
     $req->session()->forget('login');
     return redirect('/login');
 });
-Route::get('/cekdetailobat', [PagesController::class, 'cekdetailobat'])->name('cekdetailobat');
+
 Route::get('/formpemesananobat', [PagesController::class, 'formpemesananobat'])->name('formpemesananobat');
 Route::get('/uploadbukti', [PagesController::class, 'uploadbukti'])->name('uploadbukti');
