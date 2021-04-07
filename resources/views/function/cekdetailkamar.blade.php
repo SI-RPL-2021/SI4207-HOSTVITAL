@@ -9,14 +9,14 @@
 
     {{-- css --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link href="{{ 'resource/css/main.css' }}" rel="stylesheet">
+    <link href="{{ url('resource/css/main.css') }}" rel="stylesheet">
 </head>
 
-<body background="{{ 'resource/imgres/back-about.png' }}" style="background-size:100%; background-repeat: no-repeat; min-height: 100vh">
+<body background="{{ url('resource/imgres/back-about.png') }}" style="background-size:100%; background-repeat: no-repeat; min-height: 100vh">
     {{-- navbar --}}
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <img src="{{ 'resource/imgres/logo-kemenkes.png' }}" alt="hostvital-logo">
+            <img src="{{ url('resource/imgres/logo-kemenkes.png') }}" alt="hostvital-logo">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,20 +35,19 @@
     <div>
         <div class="container">
             <br><br>
-            <div class="shadow card" style="margin: 3rem 1rem 3rem 1rem; border-radius: 20px">
+            <div class="shadow card" style="border-radius: 20px">
                 <div class="row">
-                    <div class="col-7">
-                        <img src="{{ 'resource/imgres/cekkamar.png' }}" alt="logo-hostvital" width="703; overflow: hidden;">
+                    <div class="col-5">
+                        <img src="{{ url('resource/imgres/'.$data->foto) }}" alt="logo-hostvital" width="510; overflow: hidden;">
                     </div>
-                    <div class="col-4">
-                        <br><br>
+                    <div class="col-6" style="margin-top: 50px; margin-left: 35px;">
                         <h3 class="artikel">Fasilitas</h3>
                         <br>
-                        <h5 class="artikel">Kamar Premier</h5>
-                        <p style="text-align:justify;">AC, 1 Bed, 1 Kamar mandi dengan air panas & dingin, Bedsite cabinet, Kulkas, Kursi tunggu, Overbed table, Meja TV
-                            Lemari pakaian, Dispenser, Meja, Sofabed, Smart TV 72", Bed penunggu, Telepon, Ruang keluarga, 1 Set meja makan.</p>
+                        <h5 class="artikel">{{$data->nama}}</h5>
+                        <p style="text-align:justify;">{{$data->deskripsi}}</p>
+                        <br>
                         <h5 class="artikel">Tersedia</h5>
-                        <p style="text-align:justify;">2 Kamar</p>
+                        <p style="text-align:justify;">{{$data->tersedia}} Kamar</p>
                         <br>
                         <div class="d-grid gap-2">
                             <a class="btn" href="{{ '/cekdetailkamar' }}" style="background-color: #CC4848; color:white; border-radius:10px">Reservasi</a>
@@ -58,12 +57,12 @@
             </div>
         </div>
     </div>
-    <br><br><br>
+    <br><br><br><br><br>
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="{{ 'resource/imgres/logo.png' }}" alt="logo-hostvital" style="margin-top: 20px">
+                    <img src="{{ url('resource/imgres/logo.png') }}" alt="logo-hostvital" style="margin-top: 20px">
                 </div>
                 <div class="col-md-3">
                     <p style="margin-bottom: 0; font-weight: 600">Site Map</p>

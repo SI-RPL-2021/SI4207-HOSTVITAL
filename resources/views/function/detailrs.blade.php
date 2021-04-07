@@ -3,11 +3,80 @@
 @section('title', 'Hosvital: Detail Rumah Sakit')
 
 @section('content')
-<img src="{{ 'resource/imgres/back-detailrs.png' }}" alt="detail rs" width="100%">
+<img src="{{ url('resource/imgres/back-detailrs.png') }}" alt="detail rs" width="100%">
 <div class="container" style="margin-top: 3rem">
     <div class="row">
         <div class="col-8">
-            <h3 class="artikel">Rumah Sakit Premier Bintaro</h3>
+            <h3 class="artikel">Rumah Sakit {{$data->nama}}</h3>
+            <h6 class="card-title judul" style="color: #828282;">{{$data->alamat}}</h6>
+            <br>
+            <pre style="text-align:justify;white-space:pre-wrap;font-family:var(--bs-font-sans-serif);">{{$data->deskripsi}}</pre>
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <div class="col">
+                    <div class="maps">
+                        <iframe src="{{$data->googlemapembed}}" width="300" height="220" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <img src="{{ url('resource/imgres/tlp.png') }}" width="20" height="20" alt="" loading="">{{$data->notelp}}
+                    <br>
+                    <img src="{{ url('resource/imgres/web.png') }}" width="30" height="20" alt="" loading="">{{$data->website}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <br>
+            <h3 class="artikel">Lihat Kamar Rawat Inap</h3>
+        </div>
+        <div class="container">
+            <div class="row">
+                @if (count($kamarinap) == 0)
+                <p>Tidak ada kamar inap</p>
+                @endif
+                @foreach ($kamarinap as $ki)
+                <div class="col-sm">
+                    <div class="shadow card mb-3 pop" style="border: 0; border-radius: 10px">
+                        <div class="row g-0">
+                            <div class="col-md-3" style="overflow: hidden;">
+                                <img src="{{ url('resource/imgres/premier1.png') }}" style="height: 160px;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title judul">{{$ki->nama}}</h6>
+                                        <h6 class="card-title judul" style="color: #263238;">Tersedia {{$ki->tersedia}}
+                                    </h5>
+                                    <h6 class="card-title judul" style="color: #27AE60;">IDR {{$ki->harga}}</h6>
+                                    <div class="d-grid gap-2">
+                                        <a class="btn" href="{{ url('/cekdetailkamar/'.$ki->id) }}" style="background-color: #CC4848; color:white; border-radius:10px">Cek Kamar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                
+            </div>
+        </div>
+    </div>
+    {{-- <div class="col-8">
+        <br>
+        <h3 class="artikel">Feedback and Review</h3>
+        <img src="{{ 'resource/imgres/profile.png' }}" width="40" height="40" alt="" loading=""> <b>Timothy Felixivano</b> Kamar Premier
+        <br>
+        <p>Rumah sakitnya bagus, dokternya juga friendly... kamarnya juga nyaman</p>
+    </div> --}}
+    <br>
+</div>
+@endsection
+
+{{-- <img src="{{ url('resource/imgres/back-detailrs.png') }}" alt="detail rs" width="100%">
+<div class="container" style="margin-top: 3rem">
+    <div class="row">
+        <div class="col-8">
+            <h3 class="artikel">Rumah Sakit {{$data->nama}}</h3>
             <h6 class="card-title judul" style="color: #828282;">Jl. Moh. Husni Thamrin No.1, Pd. Jaya, Kec. Pd. Aren, Kota Tangerang Selatan, Banten 15224</h6>
             <br>
             <p style="text-align:justify;">Sebagai bagian dari Ramsay Sime Darby Health Care, RS Premier Bintaro senantiasa berupaya meningkatkan kualitas pelayanan disemua bidang secara berkesinambungan.</p>
@@ -105,5 +174,4 @@
         <p>Rumah sakitnya bagus, dokternya juga friendly... kamarnya juga nyaman</p>
     </div>
     <br>
-</div>
-@endsection
+</div> --}}

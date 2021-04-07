@@ -10,8 +10,8 @@
   {{-- css --}}
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <link href="{{ 'resource/css/main.css' }}" rel="stylesheet">
-  <link href="{{ 'resource/css/form.css' }}" rel="stylesheet">
+  <link href="{{ url('resource/css/main.css') }}" rel="stylesheet">
+  <link href="{{ url('resource/css/form.css') }}" rel="stylesheet">
 
   {{-- icon --}}
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -22,7 +22,7 @@
   {{-- navbar --}}
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <img src="{{ 'resource/imgres/logo-kemenkes.png' }}" alt="hostvital-logo">
+      <img src="{{ url('resource/imgres/logo-kemenkes.png') }}" alt="hostvital-logo">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -51,7 +51,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <img src="{{ 'resource/imgres/logo.png' }}" alt="logo-hostvital" style="margin-top: 20px">
+          <img src="{{ url('resource/imgres/logo.png') }}" alt="logo-hostvital" style="margin-top: 20px">
         </div>
         <div class="col-md-3">
           <p style="margin-bottom: 0; font-weight: 600">Site Map</p>
