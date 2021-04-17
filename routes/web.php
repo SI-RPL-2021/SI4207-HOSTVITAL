@@ -47,3 +47,5 @@ Route::get('/cekdetailobat', [PagesController::class, 'cekdetailobat'])->name('c
 Route::get('/cekdetailobat/{id}', [PagesController::class, 'cekdetailobat'])->name('cekdetailobat');
 Route::get('/formpemesananobat', [PagesController::class, 'formpemesananobat'])->name('formpemesananobat');
 Route::get('/uploadbukti', [PagesController::class, 'uploadbukti'])->name('uploadbukti');
+Route::get('/editprofile', [PagesController::class, 'editprofile'])->name('editprofile');
+Route::get('/detaileditprofile', [PagesController::class, 'detaileditprofile'])->name('detaileditprofile');

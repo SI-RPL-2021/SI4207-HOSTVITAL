@@ -101,4 +101,12 @@ class PagesController extends Controller
         {
         return view('function.uploadbukti');
     }
+    public function editprofile()
+    {
+    return view('function.editprofile');
+}
+public function detaileditprofile()
+{
+return view('function.detaileditprofile');
+}
 }

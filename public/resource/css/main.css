@@ -139,3 +139,9 @@ footer{
     background-color: #DEDEDE;
     fill-opacity: 70%;
 }
+
+.nav .active{
+    width: 100%;
+    border-radius:5px;
+    background-color: #fff;
+}
