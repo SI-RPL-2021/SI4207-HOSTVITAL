@@ -35,12 +35,12 @@
     <div>
         <div class="container">
             <br><br>
-            <div class="shadow card" style="border-radius: 20px">
+            <div class="shadow card" style="margin: 3rem 1rem 3rem 1rem; padding: 3rem; border-radius: 10px">
                 <div class="row">
                     <div class="col-5">
-                        <img src="{{ url('resource/imgres/'.$data->foto) }}" alt="logo-hostvital" width="510; overflow: hidden;">
+                        <img src="{{ url('resource/imgres/'.$data->foto) }}" alt="logo-hostvital" width="450; overflow: hidden;">
                     </div>
-                    <div class="col-6" style="margin-top: 50px; margin-left: 35px;">
+                    <div class="col-6" style="margin-left: 35px;">
                         <h3 class="artikel">Fasilitas</h3>
                         <br>
                         <h5 class="artikel">{{$data->nama}}</h5>
@@ -57,7 +57,7 @@
             </div>
         </div>
     </div>
-    <br><br><br><br><br>
+
     <footer>
         <div class="container">
             <div class="row">

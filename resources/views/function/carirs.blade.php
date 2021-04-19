@@ -32,7 +32,7 @@
                         </div>
                         <div class="col-md-10">
                             <div class="card-body">
-                                <h6 class="card-title judul">Rumah Sakit {{$d->nama}}</h6>
+                                <h6 class="card-title judul">{{$d->nama}}</h6>
                                 <h6 class="card-title judul" style="color: #828282;">{{$d->alamat}}</h6>
                                 <div class="d-grid gap-2">
                                     <a class="btn" href="{{ url('/detailrs/'.$d->id) }}" style="background-color: #CC4848; color:white; border-radius:10px">Lihat Rumah Sakit</a>
@@ -91,7 +91,7 @@
                             </div>
                             <div class="col-md-9">
                                 <div class="card-body">
-                                    <h6 class="card-title judul">Siloam Hospitals TB Simatupang</h6>
+                                    <h6 class="card-title judul">Rumah Sakit Siloam Simatupang</h6>
                                     <h6 class="card-title judul" style="color: #828282;">Jl. R.A.Kartini No.8, RT.10/RW.4, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Jakarta 12430</h6>
                                 </div>
                             </div>

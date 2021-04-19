@@ -3,11 +3,11 @@
 @section('title', 'Hosvital: Detail Rumah Sakit')
 
 @section('content')
-<img src="{{ url('resource/imgres/back-detailrs.png') }}" alt="detail rs" width="100%">
+<img src="{{ url('resource/imgres/'.$data->foto)}}" alt="" width="100%">
 <div class="container" style="margin-top: 3rem">
     <div class="row">
         <div class="col-8">
-            <h3 class="artikel">Rumah Sakit {{$data->nama}}</h3>
+            <h3 class="artikel">{{$data->nama}}</h3>
             <h6 class="card-title judul" style="color: #828282;">{{$data->alamat}}</h6>
             <br>
             <pre style="text-align:justify;white-space:pre-wrap;font-family:var(--bs-font-sans-serif);">{{$data->deskripsi}}</pre>
@@ -40,7 +40,7 @@
                     <div class="shadow card mb-3 pop" style="border: 0; border-radius: 10px">
                         <div class="row g-0">
                             <div class="col-md-3" style="overflow: hidden;">
-                                <img src="{{ url('resource/imgres/premier1.png') }}" style="height: 160px;">
+                                <img src="{{ url('resource/imgres/'.$ki->foto) }}" style="height: 160px;">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">

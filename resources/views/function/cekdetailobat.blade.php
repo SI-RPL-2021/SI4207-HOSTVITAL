@@ -58,6 +58,7 @@
                         <div class="d-grid gap-2" align="center">
                             <a class="btn" href="{{ url('/formpemesananobat') }}" style="background-color: #CC4848; color:white; border-radius:10px">Beli Obat</a>
                         </div>
+                        <br>
                     </div>
                 </div>
             </div>
