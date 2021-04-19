@@ -78,7 +78,7 @@
                     <div class="shadow card mb-3 pop" style="border: 0; border-radius: 10px">
                         <div class="row g-0">
                             <div class="col-md-3" style="overflow: hidden;">
-                                <img src="{{ 'resource/imgres/doktercici.png' }}" style="height: 120px;">
+                                <img src="{{ 'resource/imgres/dokter-1.png' }}" style="height: 120px;">
                             </div>
                             <div class="col-md-9">
                                 <div class="card-body">
@@ -92,7 +92,7 @@
                     <div class="shadow card mb-3 pop" style="border: 0; border-radius: 10px">
                         <div class="row g-0">
                             <div class="col-md-3" style="overflow: hidden;">
-                                <img src="{{ 'resource/imgres/dokterstephen.png' }}" style="height: 120px;">
+                                <img src="{{ 'resource/imgres/dokter-2.png' }}" style="height: 120px;">
                             </div>
                             <div class="col-md-9">
                                 <div class="card-body">

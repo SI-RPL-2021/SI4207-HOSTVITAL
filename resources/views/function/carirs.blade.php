@@ -74,7 +74,7 @@
                     <div class="shadow card mb-3 pop" style="border: 0; border-radius: 10px">
                         <div class="row g-0">
                             <div class="col-md-3" style="overflow: hidden;">
-                                <img src="{{ 'resource/imgres/rspremier.png' }}" style="height: 120px;">
+                                <img src="{{ 'resource/imgres/rs-1.jpg' }}" style="height: 120px;">
                             </div>
                             <div class="col-md-9">
                                 <div class="card-body">
@@ -87,7 +87,7 @@
                     <div class="shadow card mb-3 pop" style="border: 0; border-radius: 10px">
                         <div class="row g-0">
                             <div class="col-md-3" style="overflow: hidden;">
-                                <img src="{{ 'resource/imgres/rssiloam.png' }}" style="height: 120px;">
+                                <img src="{{ 'resource/imgres/rs-2.jpg' }}" style="height: 120px;">
                             </div>
                             <div class="col-md-9">
                                 <div class="card-body">

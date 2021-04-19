@@ -21,7 +21,7 @@
                 </div>
             </form><br>
 
-            <h3>@php echo ($keyword) ? 'Hasil Pencarian "'.$keyword.'"':'Silahkan mencari nama diagnosis'; @endphp</h3><br>
+            <h3>@php echo ($keyword) ? 'Hasil Pencarian "'.$keyword.'"':'Silahkan cari nama diagnosis'; @endphp</h3><br>
 
         </div>
 
