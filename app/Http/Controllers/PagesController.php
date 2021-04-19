@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dokter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PagesController extends Controller
 {
@@ -101,12 +103,4 @@ class PagesController extends Controller
         {
         return view('function.uploadbukti');
     }
-    public function editprofile()
-    {
-    return view('function.editprofile');
-}
-public function detaileditprofile()
-{
-return view('function.detaileditprofile');
-}
 }
