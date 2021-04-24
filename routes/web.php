@@ -46,6 +46,6 @@ Route::get('/logout', function(Request $req) {
 Route::get('/cekdetailobat', [PagesController::class, 'cekdetailobat'])->name('cekdetailobatold');
 Route::get('/cekdetailobat/{id}', [PagesController::class, 'cekdetailobat'])->name('cekdetailobat');
 Route::get('/formpemesananobat', [PagesController::class, 'formpemesananobat'])->name('formpemesananobat');
-Route::get('/uploadbukti', [PagesController::class, 'uploadbukti'])->name('uploadbukti');
+Route::post('/transaction', [PagesController::class, 'transaction'])->name('transaction');
 Route::get('/editprofile', [PagesController::class, 'editprofile'])->name('editprofile');
 Route::get('/detaileditprofile', [PagesController::class, 'detaileditprofile'])->name('detaileditprofile');

@@ -13,11 +13,11 @@
   <link href="{{ 'resource/css/main.css' }}" rel="stylesheet">
 
   <style>
-  .shadow-custom {
-    -webkit-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.34);
-    -moz-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.34);
-    box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.34);
-  }
+    .shadow-custom {
+      -webkit-box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.34);
+      -moz-box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.34);
+      box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.34);
+    }
   </style>
 </head>
 
@@ -45,33 +45,37 @@
 
 
   <div class="container mb-5 pt-5 pb-5">
-              <div class="row justify-content-md-center">
-                  <div class="col" style="background-color: #CC4848; height: 670px; border-top-left-radius: 10px; border-bottom-left-radius: 10px;">
-                  <center>
-                  <h1 style= "margin-top: 60%; font-size: 60px; color: white">Reservasi</h1>
-                  </center>
-                  </div>
-                  <div class="col  shadow-custom" style="background-color: white;">
-                  <form class="" style="padding-left: 100px; padding-right: 100px; margin-top: 10%;">
-                  <center>
-                  <h5 style="color:#CC4848">STEP 2 - UPLOAD BUKTI PEMBAYARAN</h5>
-                  </center>
-<br><br>
-                      <div class="mb-3">
-                        <form>
-                            <div class="form-group">
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                            </div>
-                        </form><br><br>
-                        <div class="d-grid gap-2">
-                          <button class="btn" style="background-color: #CC4848; color:white; border-radius:10px" type="button">Lanjut</button>
-                        </div>
-                      </div>
-                      <br>
-                  </form>
-                </div>
+    <div class="row justify-content-md-center">
+      <div class="col"
+        style="background-color: #CC4848; height: 670px; border-top-left-radius: 10px; border-bottom-left-radius: 10px;">
+        <center>
+          <h1 style="margin-top: 60%; font-size: 60px; color: white">Reservasi</h1>
+        </center>
+      </div>
+      <div class="col  shadow-custom" style="background-color: white;">
+        <form class="" style="padding-left: 100px; padding-right: 100px; margin-top: 10%;">
+          <center>
+            <h5 style="color:#CC4848">STEP 2 - UPLOAD BUKTI PEMBAYARAN</h5>
+          </center>
+          <br><br>
+          <div class="mb-3">
+            <form >
+
+             
+              <div class="form-group">
+                <input type="file" name="foto" class="form-control-file" id="exampleFormControlFile1">
+              </div>
+            </form><br><br>
+            <div class="d-grid gap-2">
+              <button class="btn" style="background-color: #CC4848; color:white; border-radius:10px"
+                type="submit">Selesai</button>
             </div>
-        </div>
+          </div>
+          <br>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <div class="container">
@@ -94,5 +98,8 @@
     </div>
   </footer>
 </body>
+
+
+
 
 </html>
