@@ -29,7 +29,12 @@
                     <a class="nav-link" href="{{ '/aboutus' }}">Tentang Kami</a>
                     <a class="nav-link" href="#skills">Artikel</a>
                     <a class="nav-link" href="#portfolio">Layanan</a>
-                    <a class="nav-link login-link" href="#contact">Login/Register</a>
+                    @if(session()->get('login') == true)
+                        <a class="nav-link" href="{{ '/' }}">{{ session()->get('login') }}</a>
+                        <a class="nav-link login-link" href="{{ '/logout' }}">Logout</a>
+                        @else
+                        <a class="nav-link login-link" href="{{ '/login' }}">Login/Register</a>
+                        @endif
                 </div>
             </div>
         </div>
@@ -57,16 +62,25 @@
                                 <span class="input-group-btn down" onClick='decreaseCount(event, this)'>
                                     <button class="btn btn-white btn-minuse " type="button">-</button>
                                 </span>
-                                <input type="text" name="qty" class="form-control no-padding add-color text-center height-20"
-                                    maxlength="3" value="1">
+                                <input type="text" name="qty"
+                                    class="form-control no-padding add-color text-center height-20" maxlength="3"
+                                    value="1">
                                 <span class="input-group-btn up" onClick='increaseCount(event, this)'>
                                     <button class="btn btn-red btn-pluss " type="button">+</button>
                                 </span>
                             </div>
                             <br>
                             <div class="d-grid gap-2" align="center">
-                                <button class="btn" type="submit"
+
+                                
+
+                                @if(session()->get('login') == true)
+                               <button class="btn" type="submit"
                                     style="background-color: #CC4848; color:white; border-radius:10px">Beli Obat</button>
+                                @else
+                                <a href="/login" class="btn btn-warning"> Silahkan Login</a>
+                                @endif
+
                             </div>
                             <br>
                     </div>

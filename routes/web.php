@@ -8,6 +8,8 @@ use App\Http\Controllers\login;
 use App\Http\Controllers\rumahsakit;
 use App\Http\Controllers\kamarinap;
 use App\Http\Controllers\profile;
+use App\Http\Controllers\obat;
+use App\Http\Controllers\diagnosis;
 use Illuminate\Http\Request;
 
 /*
@@ -26,19 +28,11 @@ Route::get('/', function () {
 });
 Route::get('/aboutus', [PagesController::class, 'aboutus'])->name('aboutus');
 Route::get('/register', [PagesController::class, 'register'])->name('register');
-Route::get('/cariobat', [PagesController::class, 'cariobat'])->name('cariobat');
 Route::get('/reservasi', [PagesController::class, 'reservasi'])->name('reservasi');
 Route::get('/bpjs', [PagesController::class, 'bpjs'])->name('bpjs');
-Route::get('/caridiagnosis', [PagesController::class, 'caridiagnosis'])->name('caridiagnosis');
 Route::get('/caridokter', [PagesController::class, 'caridokter'])->name('caridokter');
-Route::get('/detaildiagnosis', [PagesController::class, 'detaildiagnosis'])->name('detaildiagnosisold');
-Route::get('/detaildiagnosis/{id}', [PagesController::class, 'detaildiagnosis'])->name('detaildiagnosis');
 Route::get('/profiledokter', [PagesController::class, 'profiledokter'])->name('profiledokterold');
 Route::get('/profiledokter/{id}', [PagesController::class, 'profiledokter'])->name('profiledokter');
-Route::get('/cekdetailobat', [PagesController::class, 'cekdetailobat'])->name('cekdetailobatold');
-Route::get('/cekdetailobat/{id}', [PagesController::class, 'cekdetailobat'])->name('cekdetailobat');
-Route::get('/formpemesananobat', [PagesController::class, 'formpemesananobat'])->name('formpemesananobat');
-Route::post('/transaction', [PagesController::class, 'transaction'])->name('transaction');
 
 Route::group([], function(){
     Route::get('/login', [PagesController::class, 'login'])->name('login');
@@ -64,4 +58,16 @@ Route::group([], function(){
 
 Route::group([], function(){
     Route::get('/articles', [ArticlesController::class, 'index']);
+    });
+Route::group([], function(){
+    Route::get('/cariobat', [obat::class, 'cariobat'])->name('cariobat');
+    Route::get('/cekdetailobat', [obat::class, 'cekdetailobat'])->name('cekdetailobatold');
+    Route::get('/cekdetailobat/{id}', [obat::class, 'cekdetailobat'])->name('cekdetailobat');
+    Route::get('/formpemesananobat', [obat::class, 'formpemesananobat'])->name('formpemesananobat');
+    Route::post('/transaction', [obat::class, 'transaction'])->name('transaction');
+});
+Route::group([], function(){
+    Route::get('/caridiagnosis', [diagnosis::class, 'caridiagnosis'])->name('caridiagnosis');
+    Route::get('/detaildiagnosis', [diagnosis::class, 'detaildiagnosis'])->name('detaildiagnosisold');
+    Route::get('/detaildiagnosis/{id}', [diagnosis::class, 'detaildiagnosis'])->name('detaildiagnosis');
 });

@@ -49,7 +49,7 @@
       <div class="col"
         style="background-color: #CC4848; height: 670px; border-top-left-radius: 10px; border-bottom-left-radius: 10px;">
         <center>
-          <h1 style="margin-top: 60%; font-size: 60px; color: white">Reservasi</h1>
+          <h1 style="margin-top: 60%; font-size: 60px; color: white">Order</h1>
         </center>
       </div>
       <div class="col  shadow-custom" style="background-color: white;">
