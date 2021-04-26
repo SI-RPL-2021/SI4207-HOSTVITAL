@@ -7,6 +7,7 @@ use App\Http\Controllers\register;
 use App\Http\Controllers\login;
 use App\Http\Controllers\rumahsakit;
 use App\Http\Controllers\kamarinap;
+use App\Http\Controllers\profile;
 use Illuminate\Http\Request;
 
 /*
@@ -24,7 +25,7 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('/aboutus', [PagesController::class, 'aboutus'])->name('aboutus');
-Route::get('/login', [PagesController::class, 'login'])->name('login');
+Route::get('/login', [Profile::class, 'login'])->name('login');
 Route::get('/register', [PagesController::class, 'register'])->name('register');
 Route::get('/cariobat', [PagesController::class, 'cariobat'])->name('cariobat');
 Route::get('/reservasi', [PagesController::class, 'reservasi'])->name('reservasi');
@@ -35,19 +36,21 @@ Route::get('/detaildiagnosis', [PagesController::class, 'detaildiagnosis'])->nam
 Route::get('/detaildiagnosis/{id}', [PagesController::class, 'detaildiagnosis'])->name('detaildiagnosis');
 Route::get('/profiledokter', [PagesController::class, 'profiledokter'])->name('profiledokterold');
 Route::get('/profiledokter/{id}', [PagesController::class, 'profiledokter'])->name('profiledokter');
-Route::post('/register', [register::class, 'register']);
-Route::post('/login', [login::class, 'login']);
-Route::get('/logout', function(Request $req) {
-    $req->session()->forget('login');
-    return redirect('/login');
-});
 Route::get('/cekdetailobat', [PagesController::class, 'cekdetailobat'])->name('cekdetailobatold');
 Route::get('/cekdetailobat/{id}', [PagesController::class, 'cekdetailobat'])->name('cekdetailobat');
 Route::get('/formpemesananobat', [PagesController::class, 'formpemesananobat'])->name('formpemesananobat');
 Route::post('/transaction', [PagesController::class, 'transaction'])->name('transaction');
-Route::get('/editprofile', [PagesController::class, 'editprofile'])->name('editprofile');
-Route::get('/detaileditprofile', [PagesController::class, 'detaileditprofile'])->name('detaileditprofile');
 
+Route::group([], function(){
+    Route::post('/register', [profile::class, 'register']);
+    Route::post('/login', [profile::class, 'login']);
+    Route::get('/logout', function(Request $req) {
+        $req->session()->forget('login');
+        return redirect('/login');
+    });
+    Route::get('/editprofile', [profile::class, 'editprofile'])->name('editprofile');
+    Route::get('/detaileditprofile', [profile::class, 'detaileditprofile'])->name('detaileditprofile');
+});
 Route::group([], function(){
     Route::get('/carirs', [rumahsakit::class, 'carirs'])->name('carirs');
     Route::get('/detailrs', [rumahsakit::class, 'detailrs'])->name('detailrsold');
