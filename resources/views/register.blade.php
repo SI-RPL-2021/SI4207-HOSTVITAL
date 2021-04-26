@@ -13,16 +13,24 @@
   <link href="{{ 'resource/css/main.css' }}" rel="stylesheet">
 
   <style>
-  .shadow-custom {
-    -webkit-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.34);
-    -moz-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.34);
-    box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.34);
-  }
+    .background {
+      background-image: url('resource/imgres/back-about.png');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      min-height: 80vh;
+    }
+
+    .shadow-custom {
+      -webkit-box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.34);
+      -moz-box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.34);
+      box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.34);
+    }
+
   </style>
 </head>
 
-<body background="{{ 'resource/imgres/back-about.png' }}"
-  style="background-size:100%; background-repeat: no-repeat; min-height: 100vh">
+<body>
   {{-- navbar --}}
   <nav class="navbar navbar-expand-lg">
     <div class="container">
@@ -43,58 +51,71 @@
     </div>
   </nav>
 
-
-  <div class="container mb-5 pt-5 pb-5">
-              <div class="row justify-content-md-center">
-                  <div class="col" style="background-color: #CC4848; height: 850px; border-top-left-radius: 10px; border-bottom-left-radius: 10px;">
-                  <center>
-                  <h1 style= "margin-top: 60%; font-size: 60px; color: white">HI!</h1>
-                  <h3 style= "color:white; font-weight: normal;">WELCOME BACK<h3>
-                  </center>
-                  </div>
-                  <div class="col  shadow-custom" style="background-color: white;">
-                  <form method="POST" action="register" class="" style="padding-left: 100px; padding-right: 100px; margin-top: 12%;">
-                  @csrf
-                      <div class="mb-3">
-                        <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Firstname:</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" name="firstname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Lastname:</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" name="lastname" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Username:</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Email:</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Password:</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" name="password" type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label style="font-weight: bold;" for="exampleInputPassword1" class="form-label">Confirm Password</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" name="confirmpassword" type="password" class="form-control" id="exampleInputPassword1">
-                        <br>
-                        <div class="form-check form-check-inline">
-                            <input style="border: 2px solid #CC4848;" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                            <label class="form-check-label" for="inlineCheckbox1">Saya setuju dengan Syarat dan Ketentuan serta Kebijakan yang berlaku</label>
-                        </div>
-                      </div>
-                      <div class="d-grid gap-2">
-                          <button class="btn" style="background-color: #CC4848; color:white; border-radius:10px" type="submit">Register</button>
-                      </div>
-                      <br>
-                      <center>
-                      <h6 style="font-weight: normal;">Sudah punya akun? Login <a href="{{ '/login' }}" style="color:black;">Disini</a></h6>
-                      </center>
-                  </form>
-                </div>
-            </div>
+  <div class="background">
+    <div class="container pt-5 pb-5">
+      <div class="row justify-content-md-center">
+        <div class="col"
+          style="background-color: #CC4848; height: 850px; border-top-left-radius: 10px; border-bottom-left-radius: 10px;">
+          <center>
+            <h1 style="margin-top: 60%; font-size: 60px; color: white">HI!</h1>
+            <h3 style="color:white; font-weight: normal;">WELCOME BACK<h3>
+          </center>
         </div>
+        <div class="col  shadow-custom" style="background-color: white;">
+          <form method="POST" action="register" class=""
+            style="padding-left: 100px; padding-right: 100px; margin-top: 12%;">
+            @csrf
+            <div class="mb-3">
+              <label style="font-weight: bold;" for="exampleInputEmail1" class="form-label">Firstname:</label>
+              <input style="border: 2px solid #CC4848; border-radius:10px" name="firstname" type="text"
+                class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label style="font-weight: bold;" for="exampleInputEmail1" class="form-label">Lastname:</label>
+              <input style="border: 2px solid #CC4848; border-radius:10px" name="lastname" type="text"
+                class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label style="font-weight: bold;" for="exampleInputEmail1" class="form-label">Username:</label>
+              <input style="border: 2px solid #CC4848; border-radius:10px" name="username" type="text"
+                class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label style="font-weight: bold;" for="exampleInputEmail1" class="form-label">Email:</label>
+              <input style="border: 2px solid #CC4848; border-radius:10px" name="email" type="email"
+                class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label style="font-weight: bold;" for="exampleInputEmail1" class="form-label">Password:</label>
+              <input style="border: 2px solid #CC4848; border-radius:10px" name="password" type="password"
+                class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label style="font-weight: bold;" for="exampleInputPassword1" class="form-label">Confirm Password</label>
+              <input style="border: 2px solid #CC4848; border-radius:10px" name="confirmpassword" type="password"
+                class="form-control" id="exampleInputPassword1">
+              <br>
+              <div class="form-check form-check-inline">
+                <input style="border: 2px solid #CC4848;" class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                  value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">Saya setuju dengan Syarat dan Ketentuan serta
+                  Kebijakan yang berlaku</label>
+              </div>
+            </div>
+            <div class="d-grid gap-2">
+              <button class="btn" style="background-color: #CC4848; color:white; border-radius:10px"
+                type="submit">Register</button>
+            </div>
+            <br>
+            <center>
+              <h6 style="font-weight: normal;">Sudah punya akun? Login <a href="{{ '/login' }}"
+                  style="color:black;">Disini</a></h6>
+            </center>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <div class="container">
