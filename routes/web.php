@@ -27,11 +27,6 @@ Route::get('/aboutus', [PagesController::class, 'aboutus'])->name('aboutus');
 Route::get('/login', [PagesController::class, 'login'])->name('login');
 Route::get('/register', [PagesController::class, 'register'])->name('register');
 Route::get('/cariobat', [PagesController::class, 'cariobat'])->name('cariobat');
-Route::get('/carirs', [rumahsakit::class, 'carirs'])->name('carirs');
-Route::get('/detailrs', [rumahsakit::class, 'detailrs'])->name('detailrsold');
-Route::get('/detailrs/{id}', [rumahsakit::class, 'detailrs'])->name('detailrs');
-Route::get('/cekdetailkamar', [kamarinap::class, 'cekdetailkamar'])->name('cekdetailkamarold');
-Route::get('/cekdetailkamar/{id}', [kamarinap::class, 'cekdetailkamar'])->name('cekdetailkamar');
 Route::get('/reservasi', [PagesController::class, 'reservasi'])->name('reservasi');
 Route::get('/bpjs', [PagesController::class, 'bpjs'])->name('bpjs');
 Route::get('/caridiagnosis', [PagesController::class, 'caridiagnosis'])->name('caridiagnosis');
@@ -52,6 +47,17 @@ Route::get('/formpemesananobat', [PagesController::class, 'formpemesananobat'])-
 Route::post('/transaction', [PagesController::class, 'transaction'])->name('transaction');
 Route::get('/editprofile', [PagesController::class, 'editprofile'])->name('editprofile');
 Route::get('/detaileditprofile', [PagesController::class, 'detaileditprofile'])->name('detaileditprofile');
+
+Route::group([], function(){
+    Route::get('/carirs', [rumahsakit::class, 'carirs'])->name('carirs');
+    Route::get('/detailrs', [rumahsakit::class, 'detailrs'])->name('detailrsold');
+    Route::get('/detailrs/{id}', [rumahsakit::class, 'detailrs'])->name('detailrs');
+});
+
+Route::group([], function(){
+    Route::get('/cekdetailkamar', [kamarinap::class, 'cekdetailkamar'])->name('cekdetailkamarold');
+    Route::get('/cekdetailkamar/{id}', [kamarinap::class, 'cekdetailkamar'])->name('cekdetailkamar');
+});
 
 Route::group([], function(){
     Route::get('/articles', [ArticlesController::class, 'index']);
