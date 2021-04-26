@@ -7,6 +7,7 @@ use App\Http\Controllers\register;
 use App\Http\Controllers\login;
 use App\Http\Controllers\rumahsakit;
 use App\Http\Controllers\kamarinap;
+use App\Http\Controllers\dokter;
 use App\Http\Controllers\profile;
 use App\Http\Controllers\obat;
 use App\Http\Controllers\diagnosis;
@@ -30,9 +31,7 @@ Route::get('/aboutus', [PagesController::class, 'aboutus'])->name('aboutus');
 Route::get('/register', [PagesController::class, 'register'])->name('register');
 Route::get('/reservasi', [PagesController::class, 'reservasi'])->name('reservasi');
 Route::get('/bpjs', [PagesController::class, 'bpjs'])->name('bpjs');
-Route::get('/caridokter', [PagesController::class, 'caridokter'])->name('caridokter');
-Route::get('/profiledokter', [PagesController::class, 'profiledokter'])->name('profiledokterold');
-Route::get('/profiledokter/{id}', [PagesController::class, 'profiledokter'])->name('profiledokter');
+
 
 Route::group([], function(){
     Route::get('/login', [PagesController::class, 'login'])->name('login');
@@ -49,6 +48,12 @@ Route::group([], function(){
     Route::get('/carirs', [rumahsakit::class, 'carirs'])->name('carirs');
     Route::get('/detailrs', [rumahsakit::class, 'detailrs'])->name('detailrsold');
     Route::get('/detailrs/{id}', [rumahsakit::class, 'detailrs'])->name('detailrs');
+});
+
+Route::group([], function(){
+    Route::get('/caridokter', [dokter::class, 'caridokter'])->name('caridokter');
+    Route::get('/profiledokter', [dokter::class, 'profiledokter'])->name('profiledokterold');
+    Route::get('/profiledokter/{id}', [dokter::class, 'profiledokter'])->name('profiledokter');
 });
 
 Route::group([], function(){
