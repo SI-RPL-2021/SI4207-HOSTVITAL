@@ -44,8 +44,8 @@ class profile extends Controller
 
     public function detaileditprofile($id=1)
     {
-        $data = DB::select("SELECT * FROM users WHERE id = ?",[$id]);
-        return view('function.detaileditprofile',["data"=>$data[0]]);
+        $data = DB::select("SELECT * FROM users WHERE id = $id");
+        return view('function.detaileditprofile',["data"=>$data]);
     }
 
     public function index()
