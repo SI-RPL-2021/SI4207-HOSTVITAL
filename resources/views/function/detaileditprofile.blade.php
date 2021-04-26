@@ -67,21 +67,23 @@
  
   <form action="">
     @csrf
+    @foreach($data as $d)
+  
     <div class="mb-3">
   <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Firstname</label>
-  <input style="border: 2px solid #CC4848; border-radius:10px" type="email" name="firstname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-</div>
+  <input style="border: 2px solid #CC4848; border-radius:10px" value="{{$d->firstname}}" type="text" name="firstname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+</div>  
 <div class="mb-3">
   <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Lastname</label>
-  <input style="border: 2px solid #CC4848; border-radius:10px" type="email" name="lastname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  <input style="border: 2px solid #CC4848; border-radius:10px" value="{{$d->lastname}}" type="text" name="lastname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 </div>
 <div class="mb-3">
   <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Username</label>
-  <input style="border: 2px solid #CC4848; border-radius:10px" type="email" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  <input style="border: 2px solid #CC4848; border-radius:10px" value="{{$d->username}} "type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 </div>
 <div class="mb-3">
   <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Email</label>
-  <input style="border: 2px solid #CC4848; border-radius:10px" type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  <input style="border: 2px solid #CC4848; border-radius:10px" value="{{$d->email}}" type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 </div>
 <div class="mb-3">
 <label style="font-weight: bold;" for="exampleInputPassword1" class="form-label">Password</label>
@@ -98,6 +100,7 @@
 <div class="d-inline">
 <button class="btn btn-success" style="color:white; border-radius:10px" type="submit">Save Data</button>
 </div>
+@endforeach
 </form>
 <br><br>
 </div>
