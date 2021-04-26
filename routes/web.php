@@ -25,7 +25,6 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('/aboutus', [PagesController::class, 'aboutus'])->name('aboutus');
-Route::get('/login', [Profile::class, 'login'])->name('login');
 Route::get('/register', [PagesController::class, 'register'])->name('register');
 Route::get('/cariobat', [PagesController::class, 'cariobat'])->name('cariobat');
 Route::get('/reservasi', [PagesController::class, 'reservasi'])->name('reservasi');
@@ -42,6 +41,7 @@ Route::get('/formpemesananobat', [PagesController::class, 'formpemesananobat'])-
 Route::post('/transaction', [PagesController::class, 'transaction'])->name('transaction');
 
 Route::group([], function(){
+    Route::get('/login', [PagesController::class, 'login'])->name('login');
     Route::post('/register', [profile::class, 'register']);
     Route::post('/login', [profile::class, 'login']);
     Route::get('/logout', function(Request $req) {
@@ -64,4 +64,4 @@ Route::group([], function(){
 
 Route::group([], function(){
     Route::get('/articles', [ArticlesController::class, 'index']);
-    });
+});
