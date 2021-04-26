@@ -64,21 +64,24 @@
     </div>
     <div class="col-md-5" style="background-color: #FFFF; padding-right:50px">
     <br><br>
-  <div class="mb-3">
+ 
+  <form action="">
+    @csrf
+    <div class="mb-3">
   <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Firstname</label>
-  <input style="border: 2px solid #CC4848; border-radius:10px" type="email" name="emailaddress" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  <input style="border: 2px solid #CC4848; border-radius:10px" type="email" name="firstname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 </div>
 <div class="mb-3">
   <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Lastname</label>
-  <input style="border: 2px solid #CC4848; border-radius:10px" type="email" name="emailaddress" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  <input style="border: 2px solid #CC4848; border-radius:10px" type="email" name="lastname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 </div>
 <div class="mb-3">
   <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Username</label>
-  <input style="border: 2px solid #CC4848; border-radius:10px" type="email" name="emailaddress" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  <input style="border: 2px solid #CC4848; border-radius:10px" type="email" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 </div>
 <div class="mb-3">
   <label style="font-weight: bold;"  for="exampleInputEmail1" class="form-label">Email</label>
-  <input style="border: 2px solid #CC4848; border-radius:10px" type="email" name="emailaddress" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  <input style="border: 2px solid #CC4848; border-radius:10px" type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 </div>
 <div class="mb-3">
 <label style="font-weight: bold;" for="exampleInputPassword1" class="form-label">Password</label>
@@ -86,7 +89,7 @@
 </div>
 <div class="mb-3">
 <label style="font-weight: bold;" for="exampleInputPassword1" class="form-label">Konfirmasi Password</label>
-<input style="border: 2px solid #CC4848; border-radius:10px" type="password" name="password" class="form-control" id="exampleInputPassword1">
+<input style="border: 2px solid #CC4848; border-radius:10px" type="password" name="confirmationpassword" class="form-control" id="exampleInputPassword1">
 <br>
 </div>
 <br>
@@ -95,6 +98,7 @@
 <div class="d-inline">
 <button class="btn btn-success" style="color:white; border-radius:10px" type="submit">Save Data</button>
 </div>
+</form>
 <br><br>
 </div>
     </div>

@@ -43,7 +43,6 @@ class profile extends Controller
     public function detaileditprofile($id=1)
     {
         $data = DB::select("SELECT * FROM users WHERE id = ?",[$id]);
-        dd($data);
         return view('function.detaileditprofile',["data"=>$data[0]]);
     }
 
