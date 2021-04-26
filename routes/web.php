@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticlesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\register;
@@ -49,3 +50,7 @@ Route::get('/formpemesananobat', [PagesController::class, 'formpemesananobat'])-
 Route::post('/transaction', [PagesController::class, 'transaction'])->name('transaction');
 Route::get('/editprofile', [PagesController::class, 'editprofile'])->name('editprofile');
 Route::get('/detaileditprofile', [PagesController::class, 'detaileditprofile'])->name('detaileditprofile');
+
+Route::group([], function(){
+    Route::get('/articles', [ArticlesController::class, 'index']);
+    });

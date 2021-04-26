@@ -13,16 +13,23 @@
   <link href="{{ 'resource/css/main.css' }}" rel="stylesheet">
 
   <style>
-  .shadow-custom {
-    -webkit-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.34);
-    -moz-box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.34);
-    box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.34);
-  }
+    .background {
+      background-image: url('resource/imgres/back-about.png');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: bottom;
+    }
+
+    .shadow-custom {
+      -webkit-box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.34);
+      -moz-box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.34);
+      box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.34);
+    }
+
   </style>
 </head>
 
-<body background="{{ 'resource/imgres/back-about.png' }}"
-  style="background-size:100%; background-repeat: no-repeat; min-height: 100vh">
+<body>
   {{-- navbar --}}
   <nav class="navbar navbar-expand-lg">
     <div class="container">
@@ -43,58 +50,69 @@
     </div>
   </nav>
 
-
-  <div class="container mb-5 pt-5 pb-5">
-              <div class="row justify-content-md-center">
-                  <div class="col" style="background-color: #CC4848; height: 870px; border-top-left-radius: 10px; border-bottom-left-radius: 10px;">
-                  <center>
-                  <h1 style= "margin-top: 60%; font-size: 60px; color: white">Reservasi</h1>
-                  </center>
-                  </div>
-                  <div class="col  shadow-custom" style="background-color: white;">
-                  <form class="" style="padding-left: 100px; padding-right: 100px; margin-top: 10%;">
-                  <center>
-                  <h5 style="color:#CC4848">STEP 1 - DAFTAR</h5>
-                  </center>
-                  <h6 style="font-weight: bold">Kamar Premiere</h6>
-                  <h6 style="font-weight: bold">IDR 3.000.000</h6>
-                  <h6 style="font-weight: normal">Rumah Sakit Premiere Bintaro</h6>
-                  <h6 style="font-weight: normal; float:right; color: #828282;"><img src="{{ 'resource/imgres/Vector.png' }}" alt="vector">   Jl. Moh. Husni Thamrin No.1, Pd. Jaya, Kec. Pd. Aren, Kota Tangerang Selatan, Banten 15224</h6>
-
-                      <div class="mb-3">
-                        <label style="font-weight: bold;"  for="exampleInputnamawali" class="form-label">Nama Wali:</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" type="text" class="form-control" id="exampleInputnamawali" aria-describedby="emailHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label style="font-weight: bold;"  for="exampleInputnamapasien" class="form-label">Nama Pasien:</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" type="text" class="form-control" id="exampleInputnamapasien" aria-describedby="emailHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label style="font-weight: bold;"  for="exampleInputkelamin" class="form-label">Jenis Kelamin:</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" type="text" class="form-control" id="exampleInputkelamin" aria-describedby="emailHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label style="font-weight: bold;"  for="exampleInputktp" class="form-label">KTP Pasien:</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" type="text" class="form-control" id="exampleInputktp" aria-describedby="emailHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label style="font-weight: bold;"  for="exampleInputlahir" class="form-label">Tempat Tanggal Lahir:</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" type="text" class="form-control" id="exampleInputlahir" aria-describedby="emailHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label style="font-weight: bold;" for="exampleInputalamatpasien" class="form-label">Alamat Pasien</label>
-                        <input style="border: 2px solid #CC4848; border-radius:10px" type="text" class="form-control" id="exampleInputalamatpasien">
-                        <br>
-                      </div>
-                      <div class="d-grid gap-2">
-                          <button class="btn" style="background-color: #CC4848; color:white; border-radius:10px" type="button">Lanjut</button>
-                      </div>
-                      <br>
-                  </form>
-                </div>
-            </div>
+  <div class="background">
+    <div class="container mb-5 pt-5 pb-5">
+      <div class="row justify-content-md-center">
+        <div class="col"
+          style="background-color: #CC4848; height: 870px; border-top-left-radius: 10px; border-bottom-left-radius: 10px;">
+          <center>
+            <h1 style="margin-top: 60%; font-size: 60px; color: white">Reservasi</h1>
+          </center>
         </div>
+        <div class="col  shadow-custom" style="background-color: white;">
+          <form class="" style="padding-left: 100px; padding-right: 100px; margin-top: 10%;">
+            <center>
+              <h5 style="color:#CC4848">STEP 1 - DAFTAR</h5>
+            </center>
+            <h6 style="font-weight: bold">Kamar Premiere</h6>
+            <h6 style="font-weight: bold">IDR 3.000.000</h6>
+            <h6 style="font-weight: normal">Rumah Sakit Premiere Bintaro</h6>
+            <h6 style="font-weight: normal; float:right; color: #828282;"><img
+                src="{{ 'resource/imgres/Vector.png' }}" alt="vector"> Jl. Moh. Husni Thamrin No.1, Pd. Jaya, Kec. Pd.
+              Aren, Kota Tangerang Selatan, Banten 15224</h6>
 
+            <div class="mb-3">
+              <label style="font-weight: bold;" for="exampleInputnamawali" class="form-label">Nama Wali:</label>
+              <input style="border: 2px solid #CC4848; border-radius:10px" type="text" class="form-control"
+                id="exampleInputnamawali" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label style="font-weight: bold;" for="exampleInputnamapasien" class="form-label">Nama Pasien:</label>
+              <input style="border: 2px solid #CC4848; border-radius:10px" type="text" class="form-control"
+                id="exampleInputnamapasien" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label style="font-weight: bold;" for="exampleInputkelamin" class="form-label">Jenis Kelamin:</label>
+              <input style="border: 2px solid #CC4848; border-radius:10px" type="text" class="form-control"
+                id="exampleInputkelamin" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label style="font-weight: bold;" for="exampleInputktp" class="form-label">KTP Pasien:</label>
+              <input style="border: 2px solid #CC4848; border-radius:10px" type="text" class="form-control"
+                id="exampleInputktp" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label style="font-weight: bold;" for="exampleInputlahir" class="form-label">Tempat Tanggal Lahir:</label>
+              <input style="border: 2px solid #CC4848; border-radius:10px" type="text" class="form-control"
+                id="exampleInputlahir" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label style="font-weight: bold;" for="exampleInputalamatpasien" class="form-label">Alamat Pasien</label>
+              <input style="border: 2px solid #CC4848; border-radius:10px" type="text" class="form-control"
+                id="exampleInputalamatpasien">
+              <br>
+            </div>
+            <div class="d-grid gap-2">
+              <button class="btn" style="background-color: #CC4848; color:white; border-radius:10px"
+                type="button">Lanjut</button>
+            </div>
+            <br>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <footer>
     <div class="container">
       <div class="row">
