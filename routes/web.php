@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\register;
 use App\Http\Controllers\login;
+use App\Http\Controllers\rumahsakit;
+use App\Http\Controllers\kamarinap;
 use Illuminate\Http\Request;
 
 /*
@@ -24,11 +26,11 @@ Route::get('/aboutus', [PagesController::class, 'aboutus'])->name('aboutus');
 Route::get('/login', [PagesController::class, 'login'])->name('login');
 Route::get('/register', [PagesController::class, 'register'])->name('register');
 Route::get('/cariobat', [PagesController::class, 'cariobat'])->name('cariobat');
-Route::get('/carirs', [PagesController::class, 'carirs'])->name('carirs');
-Route::get('/detailrs', [PagesController::class, 'detailrs'])->name('detailrsold');
-Route::get('/detailrs/{id}', [PagesController::class, 'detailrs'])->name('detailrs');
-Route::get('/cekdetailkamar', [PagesController::class, 'cekdetailkamar'])->name('cekdetailkamarold');
-Route::get('/cekdetailkamar/{id}', [PagesController::class, 'cekdetailkamar'])->name('cekdetailkamar');
+Route::get('/carirs', [rumahsakit::class, 'carirs'])->name('carirs');
+Route::get('/detailrs', [rumahsakit::class, 'detailrs'])->name('detailrsold');
+Route::get('/detailrs/{id}', [rumahsakit::class, 'detailrs'])->name('detailrs');
+Route::get('/cekdetailkamar', [kamarinap::class, 'cekdetailkamar'])->name('cekdetailkamarold');
+Route::get('/cekdetailkamar/{id}', [kamarinap::class, 'cekdetailkamar'])->name('cekdetailkamar');
 Route::get('/reservasi', [PagesController::class, 'reservasi'])->name('reservasi');
 Route::get('/bpjs', [PagesController::class, 'bpjs'])->name('bpjs');
 Route::get('/caridiagnosis', [PagesController::class, 'caridiagnosis'])->name('caridiagnosis');
