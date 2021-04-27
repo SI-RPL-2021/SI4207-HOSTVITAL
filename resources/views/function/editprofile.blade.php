@@ -38,7 +38,7 @@
                     <a class="nav-link" href="{{ '/aboutus' }}">Tentang Kami</a>
                     <a class="nav-link" href="#skills">Artikel</a>
                     <a class="nav-link" href="#portfolio">Layanan</a>
-                    <a class="nav-link login-link" href="{{ '/login' }}">Login/Register</a>
+                    <a class="nav-link login-link" href="{{ '/logout' }}">Logout</a>
                 </div>
             </div>
         </div>
