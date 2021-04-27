@@ -19,6 +19,7 @@ class profile extends Controller
         if (Hash::check($req->password, $login->password))
         {
             $req->session()->put('login', $login->username);
+            $req->session()->put('id', $login->id);
             return redirect("/");
         } else {
             $req->session()->put('login', false);
@@ -37,17 +38,32 @@ class profile extends Controller
         return redirect("login");
     }
 
-    public function editprofile()
+    public function editprofile($id)
     {
-    return view('function.editprofile');
+    $data = DB::select("SELECT * FROM users WHERE id = $id");
+    return view('function.editprofile',["data"=>$data]);
     }
 
-    public function detaileditprofile($id=1)
+    public function detaileditprofile($id)
     {
         $data = DB::select("SELECT * FROM users WHERE id = $id");
         return view('function.detaileditprofile',["data"=>$data]);
     }
-
+    public function saveeditprofile(Request $req)
+    {
+        if ($req->password ==$req->confirmationpassword) {
+            User::where('id', $req->id)
+            ->update([
+                'firstname' => $req->firstname,
+                'lastname'=> $req->lastname,
+                'username' => $req->username,
+                'email'=> $req->email,
+                'password'=>bcrypt($req->password),
+                ]);
+                return redirect ('/editprofile/'.$req->id);
+        }else{
+        }
+}   
     public function index()
     {
         //
