@@ -30,7 +30,7 @@
                     <a class="nav-link" href="#skills">Artikel</a>
                     <a class="nav-link" href="#portfolio">Layanan</a>
                     @if(session()->get('login') == true)
-                        <a class="nav-link" href="{{ '/' }}">{{ session()->get('login') }}</a>
+                        <a class="nav-link" href="{{ url('/editprofile/'.session()->get('id')) }}" >Hi, {{ session()->get('login') }}</a>
                         <a class="nav-link login-link" href="{{ '/logout' }}">Logout</a>
                         @else
                         <a class="nav-link login-link" href="{{ '/login' }}">Login/Register</a>
