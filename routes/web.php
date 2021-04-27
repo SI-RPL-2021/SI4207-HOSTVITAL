@@ -41,8 +41,9 @@ Route::group([], function(){
         $req->session()->forget('login');
         return redirect('/login');
     });
-    Route::get('/editprofile', [profile::class, 'editprofile'])->name('editprofile');
-    Route::get('/detaileditprofile', [profile::class, 'detaileditprofile'])->name('detaileditprofile');
+    Route::get('/editprofile/{id}', [profile::class, 'editprofile'])->name('editprofile');
+    Route::get('/detaileditprofile/{id}', [profile::class, 'detaileditprofile'])->name('detaileditprofile');
+    Route::post('/detaileditprofile', [profile::class, 'saveeditprofile'])->name('saveeditprofile');
 });
 Route::group([], function(){
     Route::get('/carirs', [rumahsakit::class, 'carirs'])->name('carirs');
