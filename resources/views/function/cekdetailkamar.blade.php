@@ -26,7 +26,12 @@
                     <a class="nav-link" href="{{ '/aboutus' }}">Tentang Kami</a>
                     <a class="nav-link" href="#skills">Artikel</a>
                     <a class="nav-link" href="#portfolio">Layanan</a>
-                    <a class="nav-link login-link" href="#contact">Login/Register</a>
+                    @if(session()->get('login') == true)
+          <a class="nav-link" href="{{ url('/editprofile/'.session()->get('id')) }}" >Hi, {{ session()->get('login') }}</a>
+          <a class="nav-link login-link" href="{{ '/logout' }}">Logout</a>
+          @else
+          <a class="nav-link login-link" href="{{ '/login' }}">Login/Register</a>
+          @endif
                 </div>
             </div>
         </div>
