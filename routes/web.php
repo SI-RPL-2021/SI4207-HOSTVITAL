@@ -30,7 +30,7 @@ Route::get('/', function () {
 Route::get('/aboutus', [PagesController::class, 'aboutus'])->name('aboutus');
 Route::get('/register', [PagesController::class, 'register'])->name('register');
 Route::get('/reservasi', [PagesController::class, 'reservasi'])->name('reservasi');
-Route::get('/bpjs', [PagesController::class, 'bpjs'])->name('bpjs');
+
 
 
 Route::group([], function(){
@@ -44,6 +44,7 @@ Route::group([], function(){
     Route::get('/editprofile/{id}', [profile::class, 'editprofile'])->name('editprofile');
     Route::get('/detaileditprofile/{id}', [profile::class, 'detaileditprofile'])->name('detaileditprofile');
     Route::post('/detaileditprofile', [profile::class, 'saveeditprofile'])->name('saveeditprofile');
+    Route::get('/bpjs', [PagesController::class, 'bpjs'])->name('bpjs');
 });
 Route::group([], function(){
     Route::get('/carirs', [rumahsakit::class, 'carirs'])->name('carirs');

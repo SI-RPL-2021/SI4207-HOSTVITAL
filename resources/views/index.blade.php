@@ -49,7 +49,7 @@
               </a>
         </div>
         <div class="col-md layanan">
-            <a class="btn-layanan" href="#" style="text-decoration: none;">
+            <a class="btn-layanan" href="{{ '/bpjs' }}" style="text-decoration: none;">
               <div class="shadow mb-5 bg-body" style="border-radius: 10px">
                 <img class="img" src="{{ 'resource/imgres/a-bpjs.png' }}" alt="">
                 <p class="desc">Panduan BPJS</p>
