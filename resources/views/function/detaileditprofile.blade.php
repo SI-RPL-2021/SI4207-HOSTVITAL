@@ -113,7 +113,7 @@
                         </div>
                         <br>
                         <div class="" style="text-align:right;">
-                            <a class="btn btn-secondary" style="color:white; border-radius:10px" href="#"
+                            <a class="btn btn-secondary" style="color:white; border-radius:10px" href="{{ url('/editprofile/'.session()->get('id')) }}"
                                 role="button">Cancel</a>
                             <div class="d-inline">
                                 <button class="btn btn-success" style="color:white; border-radius:10px"
