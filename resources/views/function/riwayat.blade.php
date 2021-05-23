@@ -58,7 +58,64 @@
                     </li>
                 </ul>
             </div>
-            
+            <div class="col-md-9" style="background-color: #FFFF; ">
+                <h2><u>Rawat Inap</u></h2> 
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Nama Rumah Sakit</th>
+                        <th scope="col">Tipe Kamar</th>
+                        <th scope="col">Harga</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Keterangan</th>
+                    </tr>
+                    </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Rumah Sakit Premiere Bintaro</td>
+                                <td>Premiere</td>
+                                <td>IDR 3.000.000</td>
+                                <td>Success</td>
+                                <td><a href="#" >Tulis Review</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Rumah Sakit Premiere Bintaro</td>
+                                <td>Premiere</td>
+                                <td>IDR 3.000.000</td>
+                                <td>Success</td>
+                                <td><a href="#" >Tulis Review</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <h2><u>Obat</u></h2> 
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Nama Pembeli</th>
+                        <th scope="col">Nama Obat</th>
+                        <th scope="col">Jumlah</th>
+                        <th scope="col">Harga</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Review</th>
+                    </tr>
+                    </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Timothy Felixivano</td>
+                                <td>Panadol Advance 100 mg</td>
+                                <td>2</td>
+                                <td>IDR 30.000</td>
+                                <td>IDR 60.000</td>
+                                <td><a href="#" >Tulis Review</a></td>
+                            </tr>
+                        </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
