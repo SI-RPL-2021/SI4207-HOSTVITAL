@@ -51,24 +51,14 @@
                 <br>
                 <ul class="nav flex-column">
                     <li class="nav-item" style="margin-right: 2rem; text-align:center;">
-                        <a class="nav-link active" aria-current="page" href="#">Profile saya</a>
+                        <a class="nav-link"  href="{{ '/editprofile' }}">Profile saya</a>
                     </li>
                     <li class="nav-item" style="margin-right: 2rem; text-align:center;">
-                        <a class="nav-link" href="{{ '/riwayat' }}">Riwayat</a>
+                        <a class="nav-link active" aria-current="page" href="#">Riwayat</a>
                     </li>
                 </ul>
             </div>
-            <div class="col-md-9" style="background-color: #FFFF; text-align:center; padding-top:100px">
-                <img src="{{ '/resource/imgres/profile.png' }}" alt="profile" width="7%">
-                <br><br>
-
-                @foreach ($data as $d)
-                    <h4>{{ $d->firstname }} {{ $d->lastname }}</h4>
-                    <p>{{ $d->email }}</p>
-                    <a href="{{ url('/detaileditprofile/' . $d->id) }}" class="btn btn-danger"
-                        style="background-color: #CC4848; width:225px; border-radius:10px;">Edit Profile</a>
-                @endforeach
-            </div>
+            
         </div>
     </div>
 

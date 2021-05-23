@@ -64,10 +64,10 @@ class profile extends Controller
         }else{
         }
 }   
-    public function index()
-    {
-        //
-    }
+    public function riwayat()
+        {
+        return view('function.riwayat');
+        }     
 
     /**
      * Show the form for creating a new resource.
