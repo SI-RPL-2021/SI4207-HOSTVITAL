@@ -11,30 +11,33 @@
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
+      @php
+        $fs = true;
+      @endphp
+      @for ($i = count($articles) - 1; $i > count($articles) - 4; $i--)
+      @if ($fs == true)
       <div class="carousel-item active">
         <div style="height: 60vh; overflow: hidden;">
-          <img src="{{ 'resource/imgres/dummy-berita.jpeg' }}" class="d-block w-100" alt="...">
+          <img src="{{ 'resource/imgres/articles/'.$articles[$i]->image }}" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-caption d-none d-md-block">
-          <h5>Headline 1</h5>
+          <h1 style="color: white">{{ $articles[$i]->title }}</h1>
         </div>
       </div>
+      @php
+        $fs = false;
+      @endphp
+      @else
       <div class="carousel-item">
         <div style="height: 60vh; overflow: hidden;">
-          <img src="{{ 'resource/imgres/berita-2.jpeg' }}" class="d-block w-100" alt="...">
+          <img src="{{ 'resource/imgres/articles/'.$articles[$i]->image }}" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-caption d-none d-md-block">
-          <h5>Headline 2</h5>
+          <h1 style="color: white">{{ $articles[$i]->title }}</h1>
         </div>
       </div>
-      <div class="carousel-item">
-        <div style="height: 60vh; overflow: hidden;">
-          <img src="{{ 'resource/imgres/berita-3.jpg' }}" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Headline 3</h5>
-        </div>
-      </div>
+      @endif
+      @endfor
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -47,7 +50,7 @@
   </div>
 
   <div class="container" style="margin-top: 2rem">
-    <div class="row">
+    <div class="row g-5">
       {{-- left content --}}
       <div class="col-9">
         <div class="row">
@@ -56,82 +59,34 @@
           </div>
         </div>
         <div style="margin: 1rem 0 3rem; border: 0; border-radius: 10px">
-          <div class="shadow card mb-3 pop" style="border: 0; border-radius: 10px">
+          @foreach ($articles as $article)
+          <a href="{{ "/articles/$article->id_article" }}" class="shadow card mb-3 pop-05" style="border: 0; border-radius: 10px; text-decoration: none">
             <div class="row g-0">
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title judul-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit nobis
-                    debitis, laborum atque ad dolore, totam omnis dignissimos hic nemo modi laudantium sed similique
-                    veritatis nihil cum expedita vero beatae!</h5>
-                  <a class="b-link" href="#" style="font-size: 14px">baca selengkapnya</a>
+                  <p class="article-date">Posted on {{$article->post_date}}</p>
+                  <h5 class="card-title article-title">{{$article->title}}</h5>
+                  <p class="article-date mb-0">by {{$article->author}}</p>
                 </div>
               </div>
               <div class="col-md-4" style="overflow: hidden;">
-                <img src="{{ 'resource/imgres/dummy-berita.jpeg' }}" style="height: 170px; border-radius: 0 10px 10px 0"
+                <img src="{{ 'resource/imgres/articles/'.$article->image }}" style="height: 170px; border-radius: 0 10px 10px 0"
                   align="right">
               </div>
             </div>
-          </div>
-          <div class="shadow card mb-3 pop" style="border: 0; border-radius: 10px">
-            <div class="row g-0">
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title judul-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit nobis
-                    debitis, laborum atque ad dolore, totam omnis dignissimos hic nemo modi laudantium sed similique
-                    veritatis nihil cum expedita vero beatae!</h5>
-                  <a class="b-link" href="#" style="font-size: 14px">baca selengkapnya</a>
-                </div>
-              </div>
-              <div class="col-md-4" style="overflow: hidden;">
-                <img src="{{ 'resource/imgres/dummy-berita.jpeg' }}" style="height: 170px; border-radius: 0 10px 10px 0"
-                  align="right">
-              </div>
-            </div>
-          </div>
-          <div class="shadow card mb-3 pop" style="border: 0; border-radius: 10px">
-            <div class="row g-0">
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title judul-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit nobis
-                    debitis, laborum atque ad dolore, totam omnis dignissimos hic nemo modi laudantium sed similique
-                    veritatis nihil cum expedita vero beatae!otam omnis dignissimos hic nemo modi laudantium sed similique
-                    veritatis nihil cum expedita vero beatae!</h5>
-                  <a class="b-link" href="#" style="font-size: 14px">baca selengkapnya</a>
-                </div>
-              </div>
-              <div class="col-md-4" style="overflow: hidden;">
-                <img src="{{ 'resource/imgres/dummy-berita.jpeg' }}" style="height: 170px; border-radius: 0 10px 10px 0"
-                  align="right">
-              </div>
-            </div>
-          </div>
+          </a>
+          @endforeach
         </div>
       </div>
 
       {{-- right content --}}
       <div class="col-3">
-        <div class="shadow card" style="border-radius: 10px; border: 0">
-          <div class="card-body">
-            <h3 style="margin-bottom: 2rem">Tags</h3>
-            <div class="tags pop">
-              + coronavirus
-            </div>
-            <div class="tags pop">
-              + vaccine
-            </div>
-            <div class="tags pop">
-              + who
-            </div>
-            <div class="tags pop">
-              + flu
-            </div>
-            <div class="tags pop">
-              + diet
-            </div>
-            <div class="tags pop">
-              + olahraga
-            </div>
-          </div>
+        <h3 style="margin-bottom: 2rem">Tags</h3>
+        <div class="tags pop">
+          + helath
+        </div>
+        <div class="tags pop">
+          + diet
         </div>
       </div>
     </div>

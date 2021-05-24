@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ArticlesController extends Controller
 {
@@ -13,7 +14,8 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        return view('function.additional.articles');
+        $articles = DB::select('SELECT * from articles');
+        return view('function.additional.articles', ["articles"=>$articles]);
     }
 
     /**
@@ -45,7 +47,11 @@ class ArticlesController extends Controller
      */
     public function show($id)
     {
-        //
+        $article = DB::select('select * from articles where id_article = ?', [$id]);
+        $prev = DB::select('select * from articles where id_article = ?', [$id - 1]);
+        $next = DB::select('select * from articles where id_article = ?', [$id + 1]);
+
+        return view('function.additional.articlepage', ["article"=>$article, "prev"=>$prev, "next"=>$next]);
     }
 
     /**
