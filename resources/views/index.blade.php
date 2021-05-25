@@ -83,32 +83,6 @@
               </div>
             </div>
           </div>
-          <div class="shadow card mb-3 pop" style="border: 0; border-radius: 10px">
-            <div class="row g-0">
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h6 class="card-title judul">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit nobis debitis, laborum atque ad dolore, totam omnis dignissimos hic nemo modi laudantium sed similique veritatis nihil cum expedita vero beatae!</h6>
-                  <a class="b-link" href="#" style="font-size: 14px">baca selengkapnya</a>
-                </div>
-              </div>
-              <div class="col-md-4" style="overflow: hidden;">
-                <img src="{{ 'resource/imgres/dummy-berita.jpeg' }}" style="height: 125px; border-radius: 0 10px 10px 0" align="right">
-              </div>
-            </div>
-          </div>
-          <div class="shadow card mb-3 pop" style="border: 0; border-radius: 10px">
-            <div class="row g-0">
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h6 class="card-title judul">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit nobis debitis, laborum atque ad dolore, totam omnis dignissimos hic nemo modi laudantium sed similique veritatis nihil cum expedita vero beatae!</h6>
-                  <a class="b-link" href="#" style="font-size: 14px">baca selengkapnya</a>
-                </div>
-              </div>
-              <div class="col-md-4" style="overflow: hidden;">
-                <img src="{{ 'resource/imgres/dummy-berita.jpeg' }}" style="height: 125px; border-radius: 0 10px 10px 0" align="right">
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

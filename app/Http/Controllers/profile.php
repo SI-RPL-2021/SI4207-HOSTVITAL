@@ -63,11 +63,16 @@ class profile extends Controller
                 return redirect ('/editprofile/'.$req->id);
         }else{
         }
-}   
+    }   
+
     public function riwayat()
         {
         return view('function.riwayat');
         }     
+
+    public function ulasan() {
+        return view("function.review");
+    }
 
     /**
      * Show the form for creating a new resource.
