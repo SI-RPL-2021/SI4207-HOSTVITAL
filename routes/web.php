@@ -5,14 +5,8 @@ use App\Http\Controllers\diagnosis;
 use App\Http\Controllers\dokter;
 use App\Http\Controllers\kamarinap;
 use App\Http\Controllers\obat;
-<<<<<<< HEAD
-use App\Http\Controllers\PagesController;
-use App\Http\Controllers\profile;
-use App\Http\Controllers\rumahsakit;
-=======
 use App\Http\Controllers\diagnosis;
 use App\Http\Controllers\reservasi;
->>>>>>> e1c08a33652cc00dedc0e6beb49995e879b69083
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,13 +26,10 @@ Route::get('/', function () {
 });
 Route::get('/aboutus', [PagesController::class, 'aboutus'])->name('aboutus');
 Route::get('/register', [PagesController::class, 'register'])->name('register');
-<<<<<<< HEAD
 Route::get('/reservasi', [PagesController::class, 'reservasi'])->name('reservasi');
-=======
 // Route::get('/reservasi', [PagesController::class, 'reservasi'])->name('reservasi');
 
 Route::get('/bpjs', [PagesController::class, 'bpjs'])->name('bpjs');
->>>>>>> e1c08a33652cc00dedc0e6beb49995e879b69083
 
 Route::group([], function () {
 	Route::get('/login', [PagesController::class, 'login'])->name('login');
@@ -85,13 +76,11 @@ Route::group([], function () {
 	Route::get('/formpemesananobat', [obat::class, 'formpemesananobat'])->name('formpemesananobat');
 	Route::post('/transaction', [obat::class, 'transaction'])->name('transaction');
 });
-<<<<<<< HEAD
 Route::group([], function () {
 	Route::get('/caridiagnosis', [diagnosis::class, 'caridiagnosis'])->name('caridiagnosis');
 	Route::get('/detaildiagnosis', [diagnosis::class, 'detaildiagnosis'])->name('detaildiagnosisold');
 	Route::get('/detaildiagnosis/{id}', [diagnosis::class, 'detaildiagnosis'])->name('detaildiagnosis');
 });
-=======
 Route::group([], function(){
     Route::get('/caridiagnosis', [diagnosis::class, 'caridiagnosis'])->name('caridiagnosis');
     Route::get('/detaildiagnosis', [diagnosis::class, 'detaildiagnosis'])->name('detaildiagnosisold');
@@ -100,4 +89,3 @@ Route::group([], function(){
 
 Route::get('reservasi/{idKamar}', [reservasi::class, 'bookingKamar']);
 Route::post('reservasi/', [reservasi::class, 'submitBooking'])->name('submitReservasi');
->>>>>>> e1c08a33652cc00dedc0e6beb49995e879b69083
