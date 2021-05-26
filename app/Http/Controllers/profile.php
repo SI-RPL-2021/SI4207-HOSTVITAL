@@ -73,8 +73,20 @@ class profile extends Controller
         return view('function.riwayat',["wayati"=>$wayati, "wayato"=>$wayato]);
         }     
 
-    public function ulasan() {
-        return view("function.review");
+    public function ulasan($id) {
+        $data = DB::select("SELECT * FROM riwayatinap WHERE id_riwayat = $id");
+        return view("function.review",["data"=>$data]);
+    }
+
+    public function postulasan(Request $request) {
+        DB::table('review')->insert([
+            'id_riwayat' => $request->id_riwayat,
+            'review' => $request->feedback
+        ]);
+        DB::table('riwayatinap')
+            ->where('id_riwayat', $request->id_riwayat)
+            ->update(['keter' => "selesai"]);
+        return redirect()->action([profile::class, 'riwayat']);
     }
 
     /**

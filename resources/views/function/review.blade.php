@@ -21,9 +21,10 @@
           <img src="/resource/imgres/kamar-2.jpg" alt="" style="height: 690px;">
         </div>
         <div class="col-7" style="padding: 3rem">
-          <h5>Kamar Premiere</h5>
-          <h5>IDR 3000000</h5>
-          <p class="mb-2">Rumah Sakit Premiere Bintaro</p>
+          @foreach ($data as $d)
+          <h5>{{ $d->tipekamar }}</h5>
+          <h5>IDR {{ $d->harga }}</h5>
+          <p class="mb-2">{{ $d->namars }}</p>
           <table style="color: #828282">
             <tr>
               <td style="width: 30px; font-size: 20px; vertical-align: top"><i class="fa fa-map-marker" aria-hidden="true"></i></td>
@@ -32,11 +33,14 @@
           </table>
           <br>
           <h5>Tulis Feedback/Review</h5>
-          <form action="" style="margin-top: 14px">
+          <form action="/postulasan" method="POST" style="margin-top: 14px">
+            {{ csrf_field() }}
+            <input type="hidden" value="{{ $d->id_riwayat }}" name="id_riwayat">
             <textarea name="feedback" id="" cols="30" rows="13" style="width: 100%; border: solid 3px #CC4848; border-radius: 10px; resize: none"></textarea>
             <button class="btn" style="background-color: #CC4848; color:white; border-radius:10px; width: 100%; margin-top: 15px"
                 type="submit">Kirim</button>
           </form>
+          @endforeach
         </div>
       </div>
     </div>

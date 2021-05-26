@@ -41,7 +41,8 @@ Route::group([], function () {
 	Route::get('/detaileditprofile/{id}', [profile::class, 'detaileditprofile'])->name('detaileditprofile');
 	Route::post('/detaileditprofile', [profile::class, 'saveeditprofile'])->name('saveeditprofile');
 	Route::get('/riwayat', [profile::class, 'riwayat'])->name('riwayat'); 
-	Route::get('/ulasan', [profile::class, 'ulasan'])->name('ulasan');
+	Route::get('/ulasan/{id}', [profile::class, 'ulasan'])->name('ulasan');
+	Route::post('/postulasan', [profile::class, 'postulasan'])->name('postulasan');
 	Route::get('/bpjs', [PagesController::class, 'bpjs'])->name('bpjs');
 });
 Route::group([], function () {
