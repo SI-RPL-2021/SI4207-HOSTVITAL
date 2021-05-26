@@ -51,7 +51,7 @@
                 <br>
                 <ul class="nav flex-column">
                     <li class="nav-item" style="margin-right: 2rem; text-align:center;">
-                        <a class="nav-link"  href="{{ '/editprofile' }}">Profile saya</a>
+                        <a class="nav-link"  href="{{ url('/editprofile/'.session()->get('id')) }}" >Profile saya</a>
                     </li>
                     <li class="nav-item" style="margin-right: 2rem; text-align:center;">
                         <a class="nav-link active" aria-current="page" href="#">Riwayat</a>
@@ -72,22 +72,22 @@
                     </tr>
                     </thead>
                         <tbody>
+                        @foreach($wayati as $i)
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Rumah Sakit Premiere Bintaro</td>
-                                <td>Premiere</td>
-                                <td>IDR 3.000.000</td>
-                                <td>Success</td>
-                                <td><a href="#" >Tulis Review</a></td>
+                                <th scope="row">{{ $loop->iteration }}</th>
+                                <td>{{$i->namars}}</td>
+                                <td>{{$i->tipekamar}}</td>
+                                <td>{{$i->harga}}</td>
+                                <td>{{$i->status}}</td>
+                                @if($i->keter=="review")
+                                <td><a href="{{ 'ulasan/'.$i->id_riwayat }}" >Tulis Review</a></td>
+                                @elseif($i->keter=="uploadbayar")
+                                <td><a href="#" >Upload Bukti Pembayaran</a></td>
+                                @else
+                                <td>Transaksi Selesai</td>
+                                @endif
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Rumah Sakit Premiere Bintaro</td>
-                                <td>Premiere</td>
-                                <td>IDR 3.000.000</td>
-                                <td>Success</td>
-                                <td><a href="#" >Tulis Review</a></td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 <h2><u>Obat</u></h2> 
@@ -104,15 +104,21 @@
                     </tr>
                     </thead>
                         <tbody>
+                        @foreach($wayato as $o)
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Timothy Felixivano</td>
-                                <td>Panadol Advance 100 mg</td>
-                                <td>2</td>
-                                <td>IDR 30.000</td>
-                                <td>IDR 60.000</td>
-                                <td><a href="#" >Tulis Review</a></td>
+                                <th scope="row">{{ $loop->iteration }}</th>
+                                <td>{{$o->namabel}}</td>
+                                <td>{{$o->namabat}}</td>
+                                <td>{{$o->jumlah}}</td>
+                                <td>{{$o->harga}}</td>
+                                <td>{{$o->total}}</td>
+                                @if($i->keter=="selesai")
+                                <td><a href="#" >Transaksi Selesai</a></td>
+                                @else
+                                <td>On Proccess</td>
+                                @endif
                             </tr>
+                            @endforeach
                         </tbody>
                 </table>
             </div>

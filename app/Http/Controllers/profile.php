@@ -65,9 +65,12 @@ class profile extends Controller
         }
     }   
 
-    public function riwayat()
+    public function riwayat(Request $request)
         {
-        return view('function.riwayat');
+        $id = $request->session()->get('id');
+        $wayati = DB::select("SELECT * FROM riwayatinap WHERE id_user = $id");
+        $wayato = DB::select("SELECT * FROM riwayatobat WHERE id_user = $id");
+        return view('function.riwayat',["wayati"=>$wayati, "wayato"=>$wayato]);
         }     
 
     public function ulasan() {
