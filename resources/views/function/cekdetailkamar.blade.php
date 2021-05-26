@@ -55,7 +55,7 @@
                         <p style="text-align:justify;">{{$data->tersedia}} Kamar</p>
                         <br>
                         <div class="d-grid gap-2">
-                            <a class="btn" href="{{ '/cekdetailkamar' }}" style="background-color: #CC4848; color:white; border-radius:10px">Reservasi</a>
+                            <a class="btn" href="{{ '/reservasi/'.$data->id }}" style="background-color: #CC4848; color:white; border-radius:10px">Reservasi</a>
                         </div>
                     </div>
                 </div>

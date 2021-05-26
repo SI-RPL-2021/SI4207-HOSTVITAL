@@ -11,6 +11,7 @@ use App\Http\Controllers\dokter;
 use App\Http\Controllers\profile;
 use App\Http\Controllers\obat;
 use App\Http\Controllers\diagnosis;
+use App\Http\Controllers\reservasi;
 use Illuminate\Http\Request;
 
 /*
@@ -29,7 +30,8 @@ Route::get('/', function () {
 });
 Route::get('/aboutus', [PagesController::class, 'aboutus'])->name('aboutus');
 Route::get('/register', [PagesController::class, 'register'])->name('register');
-Route::get('/reservasi', [PagesController::class, 'reservasi'])->name('reservasi');
+// Route::get('/reservasi', [PagesController::class, 'reservasi'])->name('reservasi');
+
 Route::get('/bpjs', [PagesController::class, 'bpjs'])->name('bpjs');
 
 
@@ -77,3 +79,6 @@ Route::group([], function(){
     Route::get('/detaildiagnosis', [diagnosis::class, 'detaildiagnosis'])->name('detaildiagnosisold');
     Route::get('/detaildiagnosis/{id}', [diagnosis::class, 'detaildiagnosis'])->name('detaildiagnosis');
 });
+
+Route::get('reservasi/{idKamar}', [reservasi::class, 'bookingKamar']);
+Route::post('reservasi/', [reservasi::class, 'submitBooking'])->name('submitReservasi');
