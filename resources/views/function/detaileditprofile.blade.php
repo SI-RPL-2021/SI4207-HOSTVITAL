@@ -53,9 +53,6 @@
                     <li class="nav-item" style="margin-right: 2rem; text-align:center;">
                         <a class="nav-link active" aria-current="page" href="#">Profile saya</a>
                     </li>
-                    <li class="nav-item" style="margin-right: 2rem; text-align:center;">
-                        <a class="nav-link" href="#">Riwayat</a>
-                    </li>
                 </ul>
             </div>
             <div class="col-md-4" style="background-color: #FFFF; text-align:center; padding-top:250px">

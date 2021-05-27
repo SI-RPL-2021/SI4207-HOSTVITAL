@@ -15,7 +15,7 @@
                   </div>
 
                   <div class="col" style="background-color: white; height: 500px; border-top-left-radius: 10px; border-bottom-left-radius: 10px;"">
-                  <img src = "{{ 'https://indonesia.go.id/assets/img/assets/1547118467_BPJS.jpeg' }}" width="100%">
+                  <img src = "{{ 'https://indonesia.go.id/assets/img/assets/1547118467_BPJS.jpeg' }}" width="86%">
                 </div>
 
             </div>

@@ -131,6 +131,10 @@ footer{
     transition: .5s;
     transform: scale(1.05);
 }
+.pop-05:hover{
+    transition: .5s;
+    transform: scale(1.02);
+}
 
 .tags{
     margin-bottom: 1rem;
@@ -144,4 +148,16 @@ footer{
     width: 100%;
     border-radius:5px;
     background-color: #fff;
+}
+
+/* article componenet */
+.article-date {
+    color: #828282;
+    margin-bottom: 10px;
+}
+.article-title {
+    margin: 0 0 10px 0;
+    max-height: 70px;
+    overflow: hidden;
+    color: var(--dark-color);
 }

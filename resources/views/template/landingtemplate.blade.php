@@ -13,6 +13,10 @@
   <link href="{{ url('resource/css/main.css') }}" rel="stylesheet">
   <link href="{{ url('resource/css/form.css') }}" rel="stylesheet">
 
+  <style>
+    @yield('css');
+  </style>
+
   {{-- icon --}}
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">

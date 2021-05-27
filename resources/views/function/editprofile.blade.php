@@ -54,7 +54,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Profile saya</a>
                     </li>
                     <li class="nav-item" style="margin-right: 2rem; text-align:center;">
-                        <a class="nav-link" href="#">Riwayat</a>
+                        <a class="nav-link" href="{{ '/riwayat' }}">Riwayat</a>
                     </li>
                 </ul>
             </div>
