@@ -98,21 +98,19 @@
                         <th scope="col">Nama Pembeli</th>
                         <th scope="col">Nama Obat</th>
                         <th scope="col">Jumlah</th>
-                        <th scope="col">Harga</th>
-                        <th scope="col">Total</th>
-                        <th scope="col">Review</th>
+                        <th scope="col">Total Harga</th>
+                        <th scope="col">Status</th>
                     </tr>
                     </thead>
                         <tbody>
                         @foreach($wayato as $o)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                <td>{{$o->namabel}}</td>
-                                <td>{{$o->namabat}}</td>
-                                <td>{{$o->jumlah}}</td>
-                                <td>{{$o->harga}}</td>
+                                <td>{{$o->nama_lengkap}}</td>
+                                <td>{{$o->nama}}</td>
+                                <td>{{$o->qty}}</td>
                                 <td>{{$o->total}}</td>
-                                @if($i->keter=="selesai")
+                                @if($i->keter=="done")
                                 <td><a href="#" >Transaksi Selesai</a></td>
                                 @else
                                 <td>On Proccess</td>

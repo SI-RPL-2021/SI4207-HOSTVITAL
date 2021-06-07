@@ -29,12 +29,13 @@ class obat extends Controller
         $code = 'CART-'. mt_rand(000000, 999999);
         $data = new Cart;
         $data->code =  $code;
+        $data->user_id = $request->session()->get('id');
         $data->obat_id = $request->obat_id;
         $data->qty = $request->qty;
         $data->total = $request->harga * $request->qty;
+        $data->status = 'process';
        
         $data->save();
-       // dd($data->id);
 
         $datacart = Cart::with('obat')->where('id', $data->id)->first();
 
@@ -44,6 +45,7 @@ class obat extends Controller
 
        
         $data= new Transaction;
+        $data->user_id = $request->session()->get('id');
         $data->obat_id = $request->obat_id;
         $data->qty = $request->qty;
         $data->total = $request->total;

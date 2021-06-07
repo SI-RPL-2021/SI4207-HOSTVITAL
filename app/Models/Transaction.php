@@ -12,6 +12,6 @@ class Transaction extends Model
 
     public function obat()
     {
-        return $this->belongsTo(Obat::class, 'obat_id','id');
+        return $this->belongsTo(Obat::class, 'user_id','id');
     }
 }

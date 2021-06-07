@@ -69,7 +69,10 @@ class profile extends Controller
         {
         $id = $request->session()->get('id');
         $wayati = DB::select("SELECT * FROM riwayatinap WHERE id_user = $id");
-        $wayato = DB::select("SELECT * FROM riwayatobat WHERE id_user = $id");
+        $wayato = DB::table('transactions')
+            ->join('obat', 'obat.id', '=', 'transactions.obat_id')
+            ->where('transactions.user_id', '=', $id)
+            ->get();
         return view('function.riwayat',["wayati"=>$wayati, "wayato"=>$wayato]);
         }     
 
