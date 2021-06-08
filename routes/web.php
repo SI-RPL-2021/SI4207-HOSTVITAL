@@ -11,6 +11,7 @@ use App\Http\Controllers\rumahsakit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\reservasi;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,3 +83,6 @@ Route::group([], function () {
 });
 Route::get('reservasi/{idKamar}', [reservasi::class, 'bookingKamar']);
 Route::post('reservasi/', [reservasi::class, 'submitBooking'])->name('submitReservasi');
+
+//penjualan obat
+Route::get('/datapenjualanobat', [AdminController::class, 'datapenjualanobat']);
