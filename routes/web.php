@@ -1,17 +1,18 @@
 <?php
 
-use App\Http\Controllers\ArticlesController;
-use App\Http\Controllers\diagnosis;
-use App\Http\Controllers\dokter;
-use App\Http\Controllers\kamarinap;
-use App\Http\Controllers\obat;
-use App\Http\Controllers\PagesController;
-use App\Http\Controllers\profile;
-use App\Http\Controllers\rumahsakit;
+use App\Models\Artikel;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\obat;
+use App\Http\Controllers\dokter;
+use App\Http\Controllers\profile;
+use App\Http\Controllers\diagnosis;
+use App\Http\Controllers\kamarinap;
 use App\Http\Controllers\reservasi;
+use App\Http\Controllers\rumahsakit;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ArticlesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,8 @@ use App\Http\Controllers\AdminController;
  */
 
 Route::get('/', function () {
-	return view('index');
+	$dataartikel = Artikel::orderBy('id', 'DESC')->get()->take(1);
+	return view('index',compact('dataartikel'));
 });
 Route::get('/aboutus', [PagesController::class, 'aboutus'])->name('aboutus');
 Route::get('/register', [PagesController::class, 'register'])->name('register');
@@ -84,5 +86,44 @@ Route::group([], function () {
 Route::get('reservasi/{idKamar}', [reservasi::class, 'bookingKamar']);
 Route::post('reservasi/', [reservasi::class, 'submitBooking'])->name('submitReservasi');
 
+
+
+
+//admin
+
 //penjualan obat
 Route::get('/datapenjualanobat', [AdminController::class, 'datapenjualanobat']);
+Route::get('/approvepembelianobat/{id}', [AdminController::class, 'approvepembelianobat']);
+Route::get('/declinepembelianobat/{id}', [AdminController::class, 'declinepembelianobat']);
+Route::get('/printpdfobat', [AdminController::class, 'printpdfobat']);
+
+//menu edit data
+Route::get('/editdata', [AdminController::class, 'editdata'])->name('editdata');
+
+//rumahsakit
+Route::get('/live_search/rumahsakit', [AdminController::class, 'rumahsakit'])->name('live_search.rumahsakit');
+
+
+
+//user
+Route::get('/live_search/user', [AdminController::class, 'user'])->name('live_search.user');
+
+
+
+
+//dokter
+Route::get('/live_search/dokter', [AdminController::class, 'dokter'])->name('live_search.dokter');
+
+
+
+//diagnosis
+Route::get('/live_search/diagnosis', [AdminController::class, 'diagnosis'])->name('live_search.diagnosis');
+
+
+
+//artikel
+Route::get('/live_search/artikel', [AdminController::class, 'artikel'])->name('live_search.artikel');
+
+
+
+Route::get('/adminlogin', [AdminController::class, 'adminlogin'])->name('formadadminloginminlogin');

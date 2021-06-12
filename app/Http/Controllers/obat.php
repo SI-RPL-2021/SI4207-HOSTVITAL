@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Cart;
+use App\Models\DbObat;
 use App\Models\Transaction;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 
@@ -29,37 +30,53 @@ class obat extends Controller
         $code = 'CART-'. mt_rand(000000, 999999);
         $data = new Cart;
         $data->code =  $code;
-        $data->user_id = $request->session()->get('id');
         $data->obat_id = $request->obat_id;
         $data->qty = $request->qty;
         $data->total = $request->harga * $request->qty;
-        $data->status = 'process';
        
         $data->save();
+       // dd($data->id);
 
         $datacart = Cart::with('obat')->where('id', $data->id)->first();
 
         return view('function.formpemesananobat',\compact('datacart'));
     }
     public function transaction(Request $request){
-
        
         $data= new Transaction;
-        $data->user_id = $request->session()->get('id');
         $data->obat_id = $request->obat_id;
+        $data->user_id =$request->session()->get('id');
         $data->qty = $request->qty;
         $data->total = $request->total;
         $data->nama_lengkap = $request->nama_lengkap;
         $data->no_telpon = $request->no_telpon;
         $data->alamat = $request->alamat;
+        $data->status = "Need Approve";
         $data->metode_pembayaran = $request->metode_pembayaran;
 
        // $data->save();
        // $transaction = $data->id;
 
       // $data = $request->all();
-       $data['foto'] = $request->file('foto')->store('assets/buktipembayaran','public');
-       $data->save();
+      if($request->hasFile('foto')){
+            $request->file('foto')->move('buktipembayaran/',$request->file('foto')->getClientOriginalName());
+            $data->foto= $request->file('foto')->getClientOriginalName();
+            $data->save();
+        }
+
+        $test = DbObat::find($request->obat_id);
+      
+        DB::table('riwayatobat')->insert([
+            'id_user' => $request->session()->get('id'),
+            'namabel' => $request->nama_lengkap,
+            'namabat' => $test->nama,
+            'jumlah' => $request->qty,
+            'harga' => $test->harga,
+            'total' => $request->total,
+            'status' => "Need Approve",
+            'ket' => '1'
+        ]);
+     
 
        $cart = Cart::find($request->cart_id);
        $cart->delete();

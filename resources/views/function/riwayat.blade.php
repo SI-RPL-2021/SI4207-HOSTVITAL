@@ -72,7 +72,7 @@
                     </tr>
                     </thead>
                         <tbody>
-                        @foreach($wayati as $i)
+                        @foreach($riwayatInap as $i)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{$i->namars}}</td>
@@ -81,10 +81,10 @@
                                 <td>{{$i->status}}</td>
                                 @if($i->keter=="review")
                                 <td><a href="{{ 'ulasan/'.$i->id_riwayat }}" >Tulis Review</a></td>
-                                @elseif($i->keter=="uploadbayar")
+                                @elseif($i->ket=="uploadbayar")
                                 <td><a href="#" >Upload Bukti Pembayaran</a></td>
                                 @else
-                                <td>Transaksi Selesai</td>
+                                <td>Sudah Review</td>
                                 @endif
                             </tr>
                             @endforeach
@@ -98,23 +98,21 @@
                         <th scope="col">Nama Pembeli</th>
                         <th scope="col">Nama Obat</th>
                         <th scope="col">Jumlah</th>
-                        <th scope="col">Total Harga</th>
+                        <th scope="col">Harga</th>
+                        <th scope="col">Total</th>
                         <th scope="col">Status</th>
                     </tr>
                     </thead>
                         <tbody>
-                        @foreach($wayato as $o)
+                        @foreach($riwayatobat as $o)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                <td>{{$o->nama_lengkap}}</td>
-                                <td>{{$o->nama}}</td>
-                                <td>{{$o->qty}}</td>
+                                <td>{{$o->namabel}}</td>
+                                <td>{{$o->namabat}}</td>
+                                <td>{{$o->jumlah}}</td>
+                                <td>{{$o->harga}}</td>
                                 <td>{{$o->total}}</td>
-                                @if($i->keter=="done")
-                                <td><a href="#" >Transaksi Selesai</a></td>
-                                @else
-                                <td>On Proccess</td>
-                                @endif
+                                <td>{{$o->status}}</td>
                             </tr>
                             @endforeach
                         </tbody>

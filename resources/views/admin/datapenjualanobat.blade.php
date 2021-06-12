@@ -106,35 +106,58 @@
                         </tr>
                     </thead>
                     <tbody>
-                            <a href="#" class="btn" data-toggle="modal" data-target=""><img style="width: 50px;" src=""
+                    @php
+                        $no=1;
+                    @endphp
+                    @foreach ($data as $row)
+                         <tr>
+                            <td>{{ $no++ }}</td>
+                            <td>{{ $row->nama_lengkap }}</td>
+                            <td>
+                                    @php
+                                        $obat = App\Models\Obat::find($row->obat_id);
+                                    @endphp
+                                    {{ $obat->nama }}
+                            </td>
+                            <td>{{ $row->qty }}</td>
+                            <td>IDR {{ number_format($obat->harga, 0, ',', '.') }}</td>
+                            <td>IDR {{ number_format($row->total, 0, ',', '.') }}</td>
+                            <td>
+                            <a href="#" class="btn" data-toggle="modal" data-target="#exampleModalCenter{{ $row->id }}"><img style="width: 50px;" src="{{ asset('buktipembayaran/'.$row->foto) }}"
                                     alt=""> </a>
                             <!-- Button trigger modal -->
                             
                                 <!-- Modal -->
-                                <div class="modal fade" id="" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                                <div class="modal fade" id="exampleModalCenter{{ $row->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle{{ $row->id }}" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="">Bukti Pembayaran</h5>
+                                        <h5 class="modal-title" id="exampleModalLongTitle{{ $row->id }}">Bukti Pembayaran</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body text-center">
-                                       <img src=""
+                                       <img src="{{ asset('buktipembayaran/'.$row->foto) }}"
                                     alt="">
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Closee</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        
                                     </div>
                                     </div>
                                 </div>
                                 </div>
+                            
+                            
                             </td>
-                            <td></td>
+                            <td>{{ $row->status }}</td>
                             <td>
+                                <a href="#" class="btn btn-success accept btn-sm" data-id={{ $row->id }}>Accept</a>
+                                <a href="#" class="btn btn-danger btn-sm decline" data-id={{ $row->id }}>Decline</a>
                             </td>
                         </tr>
+                    @endforeach
                     </tbody>
                 </table>
 
@@ -172,3 +195,111 @@
 </body>
 
 </html>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Data Statistik Penjualan Obat Bulan ini'
+        },
+
+        accessibility: {
+            announceNewData: {
+                enabled: true
+            }
+        },
+        xAxis: {
+            type: 'category'
+        },
+        yAxis: {
+            title: {
+                text: 'Total Penjualan'
+            }
+
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            series: {
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:f}'
+                }
+            }
+        },
+
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:f}</b> of total<br/>'
+        },
+
+        series: [
+            {
+                name: "Penjualan Obat",
+                colorByPoint: true,
+                data: {!!json_encode($response)!!}
+            }
+        ]
+    });
+</script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script> 
+
+          $('.accept').click( function(){
+              var pelangganid = $(this).attr('data-id');
+              
+              swal({
+                    title: "Yakin?",
+                    text: "Melakukan Update status Accept untuk data ini ",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                    if (willDelete) {
+                        window.location= "/approvepembelianobat/"+pelangganid+""
+                        swal("Sukses Merubah status data", {
+                        icon: "success",
+                        });
+                    } else {
+                        swal("Tidak ada perubahan");
+                    }
+                }); 
+          });
+
+</script>
+
+  <script> 
+
+          $('.decline').click( function(){
+              var pelangganid = $(this).attr('data-id');
+              
+              swal({
+                    title: "Yakin?",
+                    text: "Melakukan Update status decline untuk data ini ",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                    if (willDelete) {
+                        window.location= "/declinepembelianobat/"+pelangganid+""
+                        swal("Sukses Merubah status data", {
+                        icon: "success",
+                        });
+                    } else {
+                        swal("Tidak ada perubahan");
+                    }
+                }); 
+          });
+
+</script>

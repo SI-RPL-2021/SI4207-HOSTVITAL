@@ -66,24 +66,26 @@
             <h3>Artikel</h3>
           </div>
           <div class="col" style="text-align: right">
-            <a class="b-link" href="#">Lihat lebih banyak</a>
+            <a class="b-link" href="/articles">Lihat lebih banyak</a>
           </div>
         </div>
-        <div class="shadow card berita" style="margin: 1rem 0 3rem; border: 0; border-radius: 10px">
+       @foreach ($dataartikel as $row)
+          <div class="shadow card berita" style="margin: 1rem 0 3rem; border: 0; border-radius: 10px">
           <div class="shadow card mb-3 pop" style="border: 0; border-radius: 10px">
             <div class="row g-0">
               <div class="col-md-8">
                 <div class="card-body">
-                  <h6 class="card-title judul">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit nobis debitis, laborum atque ad dolore, totam omnis dignissimos hic nemo modi laudantium sed similique veritatis nihil cum expedita vero beatae!</h6>
-                  <a class="b-link" href="#" style="font-size: 14px">baca selengkapnya</a>
+                  <h6 class="card-title judul">{{ $row->title }}</h6>
+                  <a class="b-link" href="/articles/{{ $row->id }}" style="font-size: 14px">baca selengkapnya</a>
                 </div>
               </div>
               <div class="col-md-4" style="overflow: hidden;">
-                <img src="{{ 'resource/imgres/dummy-berita.jpeg' }}" style="height: 125px; border-radius: 0 10px 10px 0" align="right">
+                <img src="{{ 'resource/imgres/articles/'.$row->image }}" style="height: 125px; border-radius: 0 10px 10px 0" align="right">
               </div>
             </div>
           </div>
         </div>
+       @endforeach
       </div>
     </div>
   </div>
