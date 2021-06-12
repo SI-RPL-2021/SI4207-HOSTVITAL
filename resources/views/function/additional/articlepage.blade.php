@@ -35,7 +35,7 @@
     <h3 class="mb-3">Artikel Lainnya</h3>
     <div style="display: flex; justify-content: space-between">
       @foreach ($prev as $pr)
-      <a href="{{ "/articles/$pr->id_article" }}" class="card" style="width: 32rem; text-decoration: none; color: #263238">
+      <a href="{{ "/articles/$pr->id" }}" class="card" style="width: 32rem; text-decoration: none; color: #263238">
         <div class="card-body ">
           <div class="row">
             <div class="col" style="display: flex; max-width: 50px; align-items: center">
@@ -53,7 +53,7 @@
       </a>
       @endforeach
       @foreach ($next as $nx)
-      <a href="{{ "/articles/$nx->id_article" }}" class="card" style="width: 32rem; text-decoration: none; color: #263238">
+      <a href="{{ "/articles/$nx->id" }}" class="card" style="width: 32rem; text-decoration: none; color: #263238">
         <div class="card-body ">
           <div class="row">
             <div class="col" style="display: flex; align-items: center; max-width: 120px" ;>

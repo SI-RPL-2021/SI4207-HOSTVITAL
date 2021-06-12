@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artikel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,8 +15,14 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        $articles = DB::select('SELECT * from articles');
-        return view('function.additional.articles', ["articles"=>$articles]);
+        $articles = DB::select('SELECT * from articles ORDER BY id DESC');
+
+        $tag = Artikel::all()->unique('tag');
+
+      
+
+        
+        return view('function.additional.articles', ["articles"=>$articles,"tag"=>$tag ]);
     }
 
     /**
@@ -47,9 +54,9 @@ class ArticlesController extends Controller
      */
     public function show($id)
     {
-        $article = DB::select('select * from articles where id_article = ?', [$id]);
-        $prev = DB::select('select * from articles where id_article = ?', [$id - 1]);
-        $next = DB::select('select * from articles where id_article = ?', [$id + 1]);
+        $article = DB::select('select * from articles where id = ?', [$id]);
+        $prev = DB::select('select * from articles where id = ?', [$id - 1]);
+        $next = DB::select('select * from articles where id = ?', [$id + 1]);
 
         return view('function.additional.articlepage', ["article"=>$article, "prev"=>$prev, "next"=>$next]);
     }

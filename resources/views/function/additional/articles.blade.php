@@ -60,7 +60,7 @@
         </div>
         <div style="margin: 1rem 0 3rem; border: 0; border-radius: 10px">
           @foreach ($articles as $article)
-          <a href="{{ "/articles/$article->id_article" }}" class="shadow card mb-3 pop-05" style="border: 0; border-radius: 10px; text-decoration: none">
+          <a href="{{ "/articles/$article->id" }}" class="shadow card mb-3 pop-05" style="border: 0; border-radius: 10px; text-decoration: none">
             <div class="row g-0">
               <div class="col-md-8">
                 <div class="card-body">
@@ -82,12 +82,12 @@
       {{-- right content --}}
       <div class="col-3">
         <h3 style="margin-bottom: 2rem">Tags</h3>
-        <div class="tags pop">
-          + helath
+        @foreach ($tag as $article)
+          <div class="tags pop">
+          + {{ $article->tag }}
         </div>
-        <div class="tags pop">
-          + diet
-        </div>
+        @endforeach
+        
       </div>
     </div>
   </div>

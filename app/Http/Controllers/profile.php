@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Obat;
+use App\Models\User;
+use App\Models\Rawatinap;
+use App\Models\RiwayatObat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use App\Models\User;
 
 class profile extends Controller
 {
@@ -16,11 +19,18 @@ class profile extends Controller
      */
     public function login(Request $req){
         $login = User::where("email", $req->emailaddress)->first();
+       
         if (Hash::check($req->password, $login->password))
         {
             $req->session()->put('login', $login->username);
             $req->session()->put('id', $login->id);
-            return redirect("/");
+
+            if ($login->role == 'ADMIN') {
+                return redirect("/editdata");
+            }else{
+                return redirect("/");
+            }
+            
         } else {
             $req->session()->put('login', false);
              return 'Password salah';
@@ -67,13 +77,12 @@ class profile extends Controller
 
     public function riwayat(Request $request)
         {
-        $id = $request->session()->get('id');
-        $wayati = DB::select("SELECT * FROM riwayatinap WHERE id_user = $id");
-        $wayato = DB::table('transactions')
-            ->join('obat', 'obat.id', '=', 'transactions.obat_id')
-            ->where('transactions.user_id', '=', $id)
-            ->get();
-        return view('function.riwayat',["wayati"=>$wayati, "wayato"=>$wayato]);
+
+            $id = $request->session()->get('id');
+            $riwayatobat = RiwayatObat::where('id_user', $id)->get();
+            $riwayatInap = Rawatinap::where('id_user', $id)->get();
+            
+            return view('function.riwayat',compact('riwayatobat','riwayatInap'));
         }     
 
     public function ulasan($id) {

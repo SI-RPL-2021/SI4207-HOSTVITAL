@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kamarinap;
+use App\Models\RumahSakit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\kamarinap;
 use App\Models\reservasi as reservasiModel;
 
 class reservasi extends Controller
@@ -30,18 +31,27 @@ class reservasi extends Controller
         $reservasi->nik = $request->nikKtp;
         $reservasi->ttl = $request->ttl;
         $reservasi->alamat_pasien = $request->alamatPasien;
-        $reservasi->bukti_pembayaran = $request->file('buktiPembayaran')->store('assets/buktipembayaran','public');
-        $reservasi->save();
+        if($request->hasFile('buktiPembayaran')){
+            $request->file('buktiPembayaran')->move('buktipembayaran/',$request->file('buktiPembayaran')->getClientOriginalName());
+            $reservasi->bukti_pembayaran= $request->file('buktiPembayaran')->getClientOriginalName();
+            $reservasi->save();
+        }
 
-        $kamar = DB::select('SELECT * from kamarinap where id = ?', [$request->idKamar]);
-        $rs = DB::select('SELECT * from rumahsakit where id = ?', [$kamar[0]->id]);
+        // $kamar = DB::select('SELECT * from kamarinap where id = ?', [$request->idKamar]);
+        // $rs = DB::select('SELECT * from rumahsakit where id = ?', [$kamar[0]->id]);
+        
+        $test = kamarinap::find($request->idKamar);
+      
+        $datars = RumahSakit::find($test->id_rumahsakit);
+        //dd($datars->nama);
 
 
         DB::table('riwayatinap')->insert([
             'id_user' => $request->session()->get('id'),
-            'namars' => $rs[0]->nama,
-            'tipekamar' => $kamar[0]->nama,
-            'harga' => $kamar[0]->harga,
+            'namars' => $datars->nama,
+            'reservasi_id' => $reservasi->id,
+            'tipekamar' => $test->nama,
+            'harga' => $test->harga,
             'status' => "Need Approve",
             'keter' => "review"
         ]);
