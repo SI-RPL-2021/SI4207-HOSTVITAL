@@ -90,6 +90,12 @@ Route::post('reservasi/', [reservasi::class, 'submitBooking'])->name('submitRese
 
 
 //admin
+//rawat inap
+Route::get('/datarawatinap', [AdminController::class, 'datarawatinap']);
+Route::get('/updatestatusrawatinap/{id}', [AdminController::class, 'updatestatusrawatinapapprove']);
+Route::get('/updatestatusrawatinapdecline/{id}', [AdminController::class, 'updatestatusrawatinapdecline']);
+Route::get('/printpdfrawayinap', [AdminController::class, 'printpdfrawayinap']);
+
 
 //penjualan obat
 Route::get('/datapenjualanobat', [AdminController::class, 'datapenjualanobat']);
@@ -97,33 +103,60 @@ Route::get('/approvepembelianobat/{id}', [AdminController::class, 'approvepembel
 Route::get('/declinepembelianobat/{id}', [AdminController::class, 'declinepembelianobat']);
 Route::get('/printpdfobat', [AdminController::class, 'printpdfobat']);
 
+
+
+
+
+
 //menu edit data
 Route::get('/editdata', [AdminController::class, 'editdata'])->name('editdata');
 
 //rumahsakit
 Route::get('/live_search/rumahsakit', [AdminController::class, 'rumahsakit'])->name('live_search.rumahsakit');
-
+Route::get('/formtambahdatarumahsakit', [AdminController::class, 'formtambahdatarumahsakit'])->name('formtambahdatarumahsakit');
+Route::post('/adddatarumahsakit', [AdminController::class, 'adddatarumahsakit'])->name('adddatarumahsakit');
+Route::get('/formeditdatarumahsakit/{id}', [AdminController::class, 'formeditdatarumahsakit'])->name('formeditdatarumahsakit');
+Route::post('/updatedatarumahsakit/{id}', [AdminController::class, 'updatedatarumahsakit'])->name('updatedatarumahsakit');
+Route::get('/deletedatarumahsakit/{id}', [AdminController::class, 'deletedatarumahsakit'])->name('deletedatarumahsakit');
 
 
 //user
 Route::get('/live_search/user', [AdminController::class, 'user'])->name('live_search.user');
-
+Route::get('/formtambahdatauser', [AdminController::class, 'formtambahdatauser'])->name('formtambahdatauser');
+Route::post('/tambahdatauser', [AdminController::class, 'tambahdatauser'])->name('tambahdatauser');
+Route::get('/formeditdatauser/{id}', [AdminController::class, 'formeditdatauser'])->name('formeditdatauser');
+Route::post('/updatedatauser/{id}', [AdminController::class, 'updatedatauser'])->name('updatedatauser');
+Route::get('/deletedatauser/{id}', [AdminController::class, 'deletedatauser'])->name('deletedatauser');
 
 
 
 //dokter
 Route::get('/live_search/dokter', [AdminController::class, 'dokter'])->name('live_search.dokter');
+Route::get('/formtambahdatadokter', [AdminController::class, 'formtambahdatadokter'])->name('formtambahdatadokter');
+Route::post('/tambahdatadokter', [AdminController::class, 'tambahdatadokter'])->name('tambahdatadokter');
+Route::get('/formeditdatadokter/{id}', [AdminController::class, 'formeditdatadokter'])->name('formeditdatadokter');
+Route::post('/updatedatadokter/{id}', [AdminController::class, 'updatedatadokter'])->name('updatedatadokter');
+Route::get('/deletedatadokter/{id}', [AdminController::class, 'deletedatadokter'])->name('deletedatadokter');
 
 
 
 //diagnosis
 Route::get('/live_search/diagnosis', [AdminController::class, 'diagnosis'])->name('live_search.diagnosis');
-
+Route::get('/formtambahdatadiagnosis', [AdminController::class, 'formtambahdatadiagnosis'])->name('formtambahdatadiagnosis');
+Route::post('/tambahdatadiagnosis', [AdminController::class, 'tambahdatadiagnosis'])->name('tambahdatadiagnosis');
+Route::get('/formeditdatadiagnosis/{id}', [AdminController::class, 'formeditdatadiagnosis'])->name('formeditdatadiagnosis');
+Route::post('/updatedatadiagnosis/{id}', [AdminController::class, 'updatedatadiagnosis'])->name('updatedatadiagnosis');
+Route::get('/deletedatadiagnosis/{id}', [AdminController::class, 'deletedatadiagnosis'])->name('deletedatadiagnosis');
 
 
 //artikel
 Route::get('/live_search/artikel', [AdminController::class, 'artikel'])->name('live_search.artikel');
-
+Route::get('/formtambahdataartikel', [AdminController::class, 'formtambahdataartikel'])->name('formtambahdataartikel');
+Route::post('/tambahdataartikel', [AdminController::class, 'tambahdataartikel'])->name('tambahdataartikel');
+Route::get('/formeditdataartikel/{id}', [AdminController::class, 'formeditdataartikel'])->name('formeditdataartikel');
+Route::post('/updatedataartikel/{id}', [AdminController::class, 'updatedataartikel'])->name('updatedataartikel');
+Route::get('/deletedataartikel/{id}', [AdminController::class, 'deletedataartikel'])->name('deletedataartikel');
+Route::get('/formadminlogin', [AdminController::class, 'formadminlogin'])->name('formadminlogin');
 
 
 Route::get('/adminlogin', [AdminController::class, 'adminlogin'])->name('formadadminloginminlogin');
