@@ -6,6 +6,7 @@ use App\Models\Obat;
 use App\Models\User;
 use App\Models\Rawatinap;
 use App\Models\RiwayatObat;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -79,7 +80,7 @@ class profile extends Controller
         {
 
             $id = $request->session()->get('id');
-            $riwayatobat = RiwayatObat::where('id_user', $id)->get();
+            $riwayatobat = Transaction::where('user_id', $id)->get();
             $riwayatInap = Rawatinap::where('id_user', $id)->get();
             
             return view('function.riwayat',compact('riwayatobat','riwayatInap'));

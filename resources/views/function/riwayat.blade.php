@@ -105,12 +105,16 @@
                     </thead>
                         <tbody>
                         @foreach($riwayatobat as $o)
+                        @php
+                            
+                        $obat = App\Models\Obat::find($o->obat_id)
+                        @endphp
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                <td>{{$o->namabel}}</td>
-                                <td>{{$o->namabat}}</td>
-                                <td>{{$o->jumlah}}</td>
-                                <td>{{$o->harga}}</td>
+                                <td>{{$o->nama_lengkap}}</td>
+                                <td>{{$obat->nama}}</td>
+                                <td>{{$o->qty}}</td>
+                                <td>{{$obat->harga}}</td>
                                 <td>{{$o->total}}</td>
                                 <td>{{$o->status}}</td>
                             </tr>
