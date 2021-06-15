@@ -104,10 +104,11 @@ Route::get('/approvepembelianobat/{id}', [AdminController::class, 'approvepembel
 Route::get('/declinepembelianobat/{id}', [AdminController::class, 'declinepembelianobat']);
 Route::get('/printpdfobat', [AdminController::class, 'printpdfobat']);
 
+//datauser
+Route::get('/datauser', [AdminController::class, 'datauser'])->name('datauser');
 
-
-
-
+//datarumahsakit
+Route::get('/datarumahsakit', [AdminController::class, 'datarumahsakit'])->name('datarumahsakit');
 
 //menu edit data
 Route::get('/editdata', [AdminController::class, 'editdata'])->name('editdata');
