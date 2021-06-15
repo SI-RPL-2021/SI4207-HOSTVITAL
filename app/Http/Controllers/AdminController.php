@@ -628,4 +628,15 @@ class AdminController extends Controller
        return view('admin.login');
    }
 
+   public function datauser(){
+    $datauser=\App\Models\User::all();
+    return view('admin.datauser', compact('datauser'));
+
+}
+public function datarumahsakit(){
+    $datarumahsakit=\App\Models\RumahSakit::all();
+    return view('admin.datarumahsakit', compact('datarumahsakit'));
+
+}
+
 }
