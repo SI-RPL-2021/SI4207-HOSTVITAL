@@ -163,3 +163,4 @@ Route::get('/formadminlogin', [AdminController::class, 'formadminlogin'])->name(
 Route::get('/adminlogin', [AdminController::class, 'adminlogin'])->name('formadadminloginminlogin');
 
 Route::get('/rsrawatinap', [AdminrsController::class, 'rsrawatinap'])->name('rsrawatinap');
+Route::get('/rsmin', [AdminrsController::class, 'rsedit'])->name('rsedit');
