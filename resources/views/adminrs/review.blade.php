@@ -47,13 +47,13 @@
         <br>
         <ul class="nav flex-column">
           <li class="nav-item mb-1" style="margin-right: 2rem; text-align:center;">
-            <a class="nav-link active" href="#"
-              style="font-weight: bold; font-size: 16px; text-decoration: none; color:#CC4848;">Data Rawat Inap</a>
+            <a class="nav-link" href="/rsrawatinap"
+              style="font-weight: bold; font-size: 16px; text-decoration: none; color:#fff;">Data Rawat Inap</a>
           </li>
 
           <li class="nav-item mb-1" style="margin-right: 2rem; text-align:center;">
-            <a class="nav-link" href="/rsreview"
-              style="font-weight: bold; font-size: 16px; text-decoration: none; color:#FFFFFF;">Saran & Masukan</a>
+            <a class="nav-link active" href="/rsreview"
+              style="font-weight: bold; font-size: 16px; text-decoration: none; color:#CC4848;">Saran & Masukan</a>
           </li>
 
           <li class="nav-item mb-1" style="margin-right: 2rem; text-align:center;">
@@ -66,7 +66,6 @@
       <div class="col-md-9" style="background-color: #FFFF;  ">
         <h2 class="pt-3" style="font-size: 18px; font-weight: bold; text-decoration: underline;">Laporan Data
           Rawat Inap</h2>
-          <a href="/printpdfrawayinap" class="btn btn-success">Print Pdf</a>
 
           <br><br>
           
@@ -74,39 +73,21 @@
           <thead>
             <tr>
               <th scope="col">No</th>
-              <th scope="col">Nama Pasien</th>
-              <th scope="col">Nama Rumah Sakit</th>
-              <th scope="col">Tipe Kamar</th>
-              <th scope="col">Harga</th>
-              <th scope="col">Tanggal</th>
-              <th scope="col">Status</th>
+              <th scope="col">Review</th>
+              <th scope="col">timestamp</th>
             </tr>
           </thead>
           <tbody>
             @php
               $no = 1;
             @endphp
-            @foreach ($data as $row)
+            @foreach ($data as $d)
               <tr>
                 <td>{{ $no++ }}</td>
-                <td>
-                  @php
-                    $user = App\Models\User::find($row->id_user);
-                  @endphp
-                  {{ $user->firstname }} {{ $user->lastname }}
-                </td>
-                <td>{{ $row->namars }}</td>
-                <td>{{ $row->tipekamar }}</td>
-                <td>IDR {{ number_format($row->harga, 0, ',', '.') }}</td>
-                <td>
-                  @php
-                    $bukti = App\Models\reservasi::find($row->reservasi_id);
-                  @endphp
-                  {{ date('d-m-Y', strtotime($bukti->created_at)) }} </td>
-                <td>{{ $row->status }}</td>
+                <td>{{ $d->review }}</td>
+                <td>{{ $d->timestamp }}</td>
               </tr>
             @endforeach
-
 
           </tbody>
         </table>

@@ -214,13 +214,19 @@ class AdminController extends Controller
 
     public function updatedatarumahsakit(Request $request,$id){
         $data = RumahSakit::find($id);
-        $data->update($request->all());
-        if($request->hasFile('foto')){
-            $request->file('foto')->move('resource/imgres/',$request->file('foto')->getClientOriginalName());
-            $data->foto= $request->file('foto')->getClientOriginalName();
-            $data->save();
+        // $data->update($request->all());
+        // if($request->hasFile('foto')){
+        //     $request->file('foto')->move('resource/imgres/',$request->file('foto')->getClientOriginalName());
+        //     $data->foto= $request->file('foto')->getClientOriginalName();
+        //     $data->save();
+        // }
+        $id = $request->session()->get('id');
+        $data = DB::select("SELECT * FROM users WHERE id= $id");
+        if ($data[0]->role = "ADMIN") {
+            return redirect()->route('editdata')->with('success','Data Berhasil Di Update');
+        }else if ($data[0]->role = "ADMINRS") {
+            return redirect('/rsmin');
         }
-        return redirect()->route('editdata')->with('success','Data Berhasil Di Update');
     }
 
 
