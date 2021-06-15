@@ -34,7 +34,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <div class="navbar-nav ms-auto">
-
           <a class="nav-link login-link" style="color: red;" href="{{ '/logout' }}">Logout</a>
         </div>
       </div>
@@ -45,10 +44,47 @@
   <div class="container mb-5 pt-5 pb-5">
     <div class="row shadow" style=" border-radius:10px; overflow: hidden;">
       <div class="col-md-3" style="background-color: #CC4848">
-        test
+        <br>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-1" style="margin-right: 2rem; text-align:center;">
+            <a class="nav-link active" href="#"
+              style="font-weight: bold; font-size: 16px; text-decoration: none; color:#CC4848;">Data Rawat Inap</a>
+          </li>
+
+          <li class="nav-item mb-1" style="margin-right: 2rem; text-align:center;">
+            <a class="nav-link" href="#"
+              style="font-weight: bold; font-size: 16px; text-decoration: none; color:#FFFFFF;">Saran & Masukan</a>
+          </li>
+
+          <li class="nav-item mb-1" style="margin-right: 2rem; text-align:center;">
+            <a class="nav-link" href="#"
+              style="font-weight: bold; font-size: 16px; text-decoration: none; color:#FFFFFF;">Edit Data</a>
+          </li>
+        </ul>
+
       </div>
       <div class="col-md-9" style="background-color: #FFFF;  ">
-        aha
+        <h2 class="pt-3" style="font-size: 18px; font-weight: bold; text-decoration: underline;">Laporan Data
+          Rawat Inap</h2>
+        <a href="/printpdfrsrawatinap" class="btn btn-success">Print Pdf</a>
+
+        <table class="table table-borderless w-auto small">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Nama Depan</th>
+              <th scope="col">Nama Belakang</th>
+              <th scope="col">username</th>
+              <th scope="col">email</th>
+              <th scope="col">Tanggal</th>
+              <th scope="col">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+
+
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
