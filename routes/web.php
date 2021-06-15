@@ -11,6 +11,7 @@ use App\Http\Controllers\reservasi;
 use App\Http\Controllers\rumahsakit;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminrsController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ArticlesController;
 
@@ -160,3 +161,5 @@ Route::get('/formadminlogin', [AdminController::class, 'formadminlogin'])->name(
 
 
 Route::get('/adminlogin', [AdminController::class, 'adminlogin'])->name('formadadminloginminlogin');
+
+Route::get('/rsrawatinap', [AdminrsController::class, 'rsrawatinap'])->name('rsrawatinap');

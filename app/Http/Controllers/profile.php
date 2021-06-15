@@ -28,6 +28,8 @@ class profile extends Controller
 
             if ($login->role == 'ADMIN') {
                 return redirect("/editdata");
+            }else if ($login->role == 'ADMINRS') {
+                return redirect("/rsrawatinap");
             }else{
                 return redirect("/");
             }
