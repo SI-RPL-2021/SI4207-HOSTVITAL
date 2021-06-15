@@ -57,7 +57,7 @@
           </li>
 
           <li class="nav-item mb-1" style="margin-right: 2rem; text-align:center;">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="/rsmin"
               style="font-weight: bold; font-size: 16px; text-decoration: none; color:#FFFFFF;">Edit Data</a>
           </li>
         </ul>
