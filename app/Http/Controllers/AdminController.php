@@ -222,9 +222,9 @@ class AdminController extends Controller
         // }
         $id = $request->session()->get('id');
         $data = DB::select("SELECT * FROM users WHERE id= $id");
-        if ($data[0]->role = "ADMIN") {
+        if ($data[0]->role == "ADMIN") {
             return redirect()->route('editdata')->with('success','Data Berhasil Di Update');
-        }else if ($data[0]->role = "ADMINRS") {
+        }else if ($data[0]->role == "ADMINRS") {
             return redirect('/rsmin');
         }
     }
@@ -633,5 +633,16 @@ class AdminController extends Controller
    public function formadminlogin(){
        return view('admin.login');
    }
+
+   public function datauser(){
+    $datauser=\App\Models\User::all();
+    return view('admin.datauser', compact('datauser'));
+
+}
+public function datarumahsakit(){
+    $datarumahsakit=\App\Models\RumahSakit::all();
+    return view('admin.datarumahsakit', compact('datarumahsakit'));
+
+}
 
 }

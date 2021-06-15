@@ -29,4 +29,8 @@ class AdminrsController extends Controller
         $data = DB::table('review')->get();
         return view('adminrs.review',["data"=>$data]);
     }
+
+    public function rsedit() {
+        return view('adminrs.rsmin');
+    }
 }
