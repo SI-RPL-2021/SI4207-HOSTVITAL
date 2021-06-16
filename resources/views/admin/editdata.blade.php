@@ -72,7 +72,7 @@
                 <br>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-1" style="margin-right: 2rem; text-align:center;">
-                        <a class="nav-link" href="#" style="font-weight: bold;
+                        <a class="nav-link" href="/datauser" style="font-weight: bold;
                                font-size: 16px;
                                text-decoration: none;
                                color:#FFFFFF;">Data User</a>
@@ -92,7 +92,7 @@
                                                 font-weight: bold;
                                                    font-size: 16px;
                                                    text-decoration: none;
-                                                   color:#FFFFFF;;" aria-current="page" href="#">Data Rumah Sakit</a>
+                                                   color:#FFFFFF;;" aria-current="page" href="/datarumahsakit">Data Rumah Sakit</a>
                     </li>
                     <li class="nav-item mb-1" style="margin-right: 2rem; text-align:center;">
                         <a class="nav-link" style="border-radius: 12px; 

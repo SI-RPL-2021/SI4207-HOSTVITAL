@@ -47,7 +47,7 @@
         <br>
         <ul class="nav flex-column">
           <li class="nav-item mb-1" style="margin-right: 2rem; text-align:center;">
-            <a class="nav-link active" href="#"
+            <a class="nav-link active" href="/rsrawatinap"
               style="font-weight: bold; font-size: 16px; text-decoration: none; color:#CC4848;">Data Rawat Inap</a>
           </li>
 
